@@ -15,10 +15,11 @@ body {
 }
 a {
   text-decoration: none;
-  color: rgba(0,60,120,.5);
+  color: rgba(0,136,204,.5);
+  transition: color .3s;
 }
 a:hover {
-  color: rgba(0,60,120,1);
+  color: rgba(0,136,204,1);
   text-decoration: underline;
 }
 .noselect {
@@ -203,7 +204,11 @@ th {
   right: 0;
 }
   .legal > a {
+    color: rgba(66,74,80,.4);
     text-decoration: none;
+  }
+  .legal > a:hover {
+    color: rgba(66,74,80,.8);
   }
 .menu {
   background-color: #fcfcfc;
