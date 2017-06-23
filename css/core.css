@@ -1,17 +1,379 @@
-body {
-  font: normal 14px/20px -apple-system, '.SFNSText-Light', '.SFNSDisplay-Regular', 'Helvetica Neue', sans-serif;
+body, input, select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: #424a50;
+  font-family: -apple-system, '.SFNSText-Light', '.SFNSDisplay-Regular', 'Helvetica Neue', sans-serif;
+  /*font-family: 'Roboto', sans-serif;*/
+  font-size: 14px;
+  font-weight: 400;
 }
-body > div {
+body {
+  background-color: #fcfcfc;
+  margin: 0;
+  transition: background-color .3s;
+}
+a {
+  text-decoration: none;
+  color: rgba(0,60,120,.5);
+}
+a:hover {
+  text-decoration: underline;
+}
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+/* Common */
+column, row {
+  display: flex;
+  flex: 1;
+}
+column {
+  flex-direction: column;
+}
+row {
+  align-items: flex-start;
+  flex-direction: row;
+}
+cell {
   align-items: center;
   display: flex;
-  height: 100vh;
-  width: 100vw;
-}
-body > div > div {
   flex: 1;
-  text-align: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 32px;
+  justify-content: flex-end;
+  margin: 0 12px 0 16px;
 }
-body > div > div > div:first-of-type {
-  font-size: 24px;
-  line-height: 48px;
+  cell > c-input {
+    display: flex;
+    flex: 5;
+  }
+    cell > c-input > input {
+      background-color: transparent;
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 4px;
+      color: #0088cc;
+      font-weight: 700;
+      outline: none;
+      padding: 4px;
+      text-align: right;
+      transition: border .3s, box-shadow .3s;
+      width: 100%;
+    }
+      cell > c-input > input.slave {
+        color: rgba(0,0,0,.5);
+        font-weight: 400;
+      }
+      cell > c-input > input:hover,
+      cell > c-input > input:focus {
+        border: 1px solid rgba(0,0,0,.3);
+      }
+    cell > c-input > input[type='checkbox'] {
+      margin: 0;
+      width: auto;
+    }
+    cell > c-input > input:disabled {
+      border: 1px solid rgba(0,0,0,0);
+      color: rgba(0,0,0,.5);
+      font-weight: inherit;
+    }
+      cell > c-input > input:disabled:hover {
+        border: 1px solid rgba(0,0,0,0);
+      }
+  cell > c-name {
+    align-items: center;
+    color: rgba(0,0,0,.5);
+    display: flex;
+    flex: 12;
+    font-size: 14px;
+  }
+g-header {
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  color: rgba(0,0,0,.5);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 10px;
+  padding: 32px 16px 8px 16px;
+}
+table {
+  margin-top: 48px;
+}
+tbody > tr {
+  color: rgba(0,0,0,.6);
+}
+tbody > tr:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.04);
+  color: rgba(0,0,0,.8);
+}
+tbody > tr:hover, tbody > tr:nth-of-type(odd):hover {
+  background-color: rgba(0,0,0,.08);
+  color: rgb(0,0,0);
+  background-color: rgba(0,0,0,.8);
+  color: rgb(255,255,255);
+}
+th, td {
+  font-size: 13px;
+  padding: 4px 0;
+  text-align: center;
+  width: 5%;
+}
+th {
+  color: rgba(0,0,0,.3);
+  padding-bottom: 8px;
+  vertical-align: bottom;
+}
+.btn-open {
+  background: transparent url("data:image/svg+xml,%3Csvg width='18px' height='14px' viewBox='15 17 18 14' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cpath d='M15,29 L33,29 L33,31 L15,31 L15,29 Z M15,23 L33,23 L33,25 L15,25 L15,23 Z M15,17 L33,17 L33,19 L15,19 L15,17 Z' fill='%23000000'%3E%3C/path%3E%3C/svg%3E") center no-repeat;
+  cursor: pointer;
+  height: 48px;
+  left: 0;
+  opacity: .3;
+  position: fixed;
+  top: 0;
+  transition: opacity .3s;
+  width: 48px;
+}
+  .btn-open:hover {
+    opacity: 1;
+  }
+.date {
+  background-color: transparent;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 4px;
+}
+.date:hover {
+  border: 1px solid rgba(0,0,0,.3);
+}
+  .date > select {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    color: #0088cc;
+    cursor: pointer;
+    flex: 1;
+    font-weight: 700;
+    outline: none;
+    padding: 4px;
+    text-align-last: center;
+    transition: opacity .3s;
+    transition: color .3s;
+    -webkit-appearance: none;
+  }
+  .date > select:first-child {
+    padding-right: 0;
+  }
+  .date > select:last-child {
+    padding-left: 0;
+  }
+  .date:hover > select {
+    color: rgba(0,0,0,.2);
+    /*opacity: .2;*/
+  }
+  .date:hover > select:hover {
+    color: #0088cc;
+    /*opacity: 1;*/
+  }
+.menu {
+  background-color: #fcfcfc;
+  bottom: 0;
+  box-shadow: 1px 0 0 rgba(0,0,0,.1);
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  transition: box-shadow .3s, left .3s, width .3s;
+  width: 360px;
+  z-index: 9;
+  -webkit-overflow-scrolling: touch;
+}
+body.menu-closed > .menu {
+  left: -360px;
+}
+  .menu > .m-header {
+    background-color: #fcfcfc;
+    display: block;
+    position: fixed;
+    width: 360px;
+  }
+    .menu > .m-header > .btn-close {
+      background: transparent url("data:image/svg+xml,%3Csvg width='16px' height='16px' viewBox='16 16 16 16' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cpath d='M25.121,23.707 L31.414,17.414 L30,16 L23.707,22.293 L17.414,16 L16,17.414 L22.293,23.707 L16,30 L17.414,31.414 L23.707,25.121 L30,31.414 L31.414,30 L25.121,23.707 Z' fill='%23000000'%3E%3C/path%3E%3C/svg%3E") center no-repeat;
+      cursor: pointer;
+      /*float: right;*/
+      height: 48px;
+      opacity: .3;
+      transition: opacity .3s;
+      width: 48px;
+    }
+    .menu > .m-header > .btn-close:hover {
+      opacity: 1;
+    }
+  .menu > column:first-of-type {
+    margin-top: 24px;
+  }
+.main {
+  margin-left: 360px;
+  transition: margin-left .3s;
+}
+  body.menu-closed > .main {
+    margin-left: 0;
+  }
+  .main > .insight {
+    font-size: 28px;
+    line-height: 38px;
+    margin: 8px auto;
+    max-width: 664px;
+    text-align: center;
+    transition: margin .3s;
+  }
+    .main > .insight > i-input {
+      color: #0088cc;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+      .main > .insight > i-input.disabled {
+        color: inherit;
+      }
+      .main > .insight input {
+        background-color: transparent;
+        border: none;
+        color: #0088cc;
+        font-size: inherit;
+        font-weight: 700;
+        outline: none;
+        width: 0;
+      }
+      .main > .insight input:disabled {
+        color: inherit;
+      }
+  .main > .visualization {
+    margin: 0 auto;
+    max-width: 664px;
+  }
+  .main > .checkboxes {
+    margin: 20px auto auto;
+    max-width: 664px;
+  }
+    .main > .checkboxes > cell {
+      justify-content: flex-start;
+      visibility: hidden;
+    }
+
+.sparkline {
+  margin: 50px auto 0;
+  position: relative;
+}
+.sparkline_dates {
+  border-top: 1px solid rgba(0,0,0,.1);
+  padding-top: 10px;
+}
+  .sparkline_dates > div {
+    flex: 1;
+    font-size: 11px;
+    text-align: center;
+  }
+.tooltip {
+  background-color: rgba(255,255,255,.7);
+  color: #000;
+  padding: 10px;
+  position: absolute;
+}
+.tooltip > .jqsfield {
+  color: inherit;
+  font-size: 14px;
+}
+
+/* Mid width */
+@media only screen
+and (max-width : 1023px) {
+/*and (max-width : 1159px) {*/
+/*and (max-width : 1479px) {*/
+  body {
+
+  }
+  .main {
+
+  }
+    .main > .insight {
+      max-width: 500px;
+    }
+    .main > .visualization {
+      max-width: 500px;
+    }
+    .main > .checkboxes {
+      max-width: 500px;
+    }
+}
+
+/* Mid-small width */
+@media only screen
+and (max-width : 859px) {
+  body.menu-open {
+    background-color: rgba(0,0,0,.1);
+    overflow: hidden;
+  }
+  .main {
+    margin-left: auto;
+  }
+    .main > .insight {
+      margin-top: 40px;
+    }
+  .menu {
+    box-shadow: none;
+  }
+    body.menu-open .menu {
+      box-shadow: 0 0 20px rgba(0,0,0,.2);
+    }
+}
+
+/* Small width (phones) */
+@media only screen
+and (max-width : 479px) {
+  cell {
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    height: 48px;
+    margin: 0;
+    padding: 0 12px 0 16px;
+  }
+    cell > c-input {
+      border-left: 1px solid rgba(0,0,0,.1);
+      height: 100%;
+    }
+    cell > c-input > input,
+    cell > c-input > input:hover,
+    cell > c-input > input:focus,
+    .date,
+    .date:hover {
+      border: 0;
+      border-radius: 0;
+    }
+    .date,
+    .date:hover {
+      border-left: 1px solid rgba(0,0,0,.1);
+    }
+  .main {
+    margin-left: auto;
+  }
+    .sparkline_dates > div {
+      overflow: overlay;
+    }
+    .sparkline_dates > div:nth-of-type(even) {
+      color: transparent;
+    }
+  .menu {
+    width: 100%;
+  }
+    body.menu-closed > .menu {
+      left: -100%;
+    }
+    .menu > .m-header {
+      width: 100%;
+    }
 }

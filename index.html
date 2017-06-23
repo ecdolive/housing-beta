@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +8,175 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Housing calculator</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
   <link href="css/reset.css" rel="stylesheet">
   <link href="css/core.css" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="lib/js.cookie.min.js"></script>
+  <script src="lib/jquery.sparkline.min.js"></script>
+  <script src="lib/housing.core.js"></script>
+  <script src="lib/housing.calculate.js"></script>
+  <script src="lib/housing.listeners.js"></script>
+  <script src="lib/housing.init.js"></script>
 </head>
-<body>
-  <div>
-    <div>
-      <div>Housing calculator</div>
-      <div>Coming soon</div>
-    </div>
+<body class="menu-open">
+
+<div id="btn-open" class="btn-open"></div>
+
+<div id="menu" class="menu">
+  <row class="m-header">
+    <div id="btn-close" class="btn-close"></div>
+  </row>
+  <column>
+    <g-header>Cost details</g-header>
+    <cell>
+      <c-name>Purchase date</c-name>
+      <c-input class="date">
+        <select id="e7" data-cookie="purchase_m"></select>
+        <select id="e8" data-cookie="purchase_y"></select>
+      </c-input>
+    </cell>
+    <cell>
+      <c-name>Home purchase price</c-name>
+      <c-input><input id="e1a" data-cookie="price"></c-input>
+    </cell>
+    <cell>
+      <c-name>Total at closing (<span id="e4b"></span>)</c-name>
+      <c-input><input id="e4a" data-cookie="down"></c-input>
+    </cell>
+    <cell>
+      <c-name>Closing costs (<span id="e3b"></span>)</c-name>
+      <c-input><input id="e3a" data-cookie="closing"></c-input>
+    </cell>
+    <cell>
+      <c-name>Down payment (<span id="e2b"></span>)</c-name>
+      <c-input><input id="e2a" data-cookie="down"></c-input>
+    </cell>
+    <cell>
+      <c-name>Loan term</c-name>
+      <c-input><input id="e9" data-cookie="loan"></c-input>
+    </cell>
+    <cell>
+      <c-name>Yearly interest rate (%)</c-name>
+      <c-input><input id="e10" data-cookie="interest"></c-input>
+    </cell>
+    <cell>
+      <c-name>Yearly PMI rate (%)</c-name>
+      <c-input><input id="e11" data-cookie="pmi"></c-input>
+    </cell>
+    <cell>
+      <c-name>Monthly HOA dues</c-name>
+      <c-input><input id="e12" data-cookie="hoa"></c-input>
+    </cell>
+    <cell>
+      <c-name>Extra monthly payment</c-name>
+      <c-input><input id="e13" data-cookie="extra"></c-input>
+    </cell>
+    <cell>
+      <c-name>Yearly homeowners insurance</c-name>
+      <c-input><input id="e5" data-cookie="hoi"></c-input>
+    </cell>
+    <cell>
+      <c-name>Yearly flood insurance</c-name>
+      <c-input><input id="e6" data-cookie="flood"></c-input>
+    </cell>
+    <!--<cell>
+      <c-name>Locality</c-name>
+      <c-input><input id="e19a" data-cookie="locality"></c-input>
+    </cell>-->
+    <cell>
+      <c-name>County millage rate</c-name>
+      <c-input><input id="e14" data-cookie="county"></c-input>
+    </cell>
+    <cell>
+      <c-name>City millage rate</c-name>
+      <c-input><input id="e15" data-cookie="city"></c-input>
+    </cell>
+    <cell>
+      <c-name>Assessment ratio (%)</c-name>
+      <c-input><input id="e18" data-cookie="assessment"></c-input>
+    </cell>
+    <cell>
+      <c-name>Yearly appreciation rate (%)</c-name>
+      <c-input><input id="e16" data-cookie="appreciation"></c-input>
+    </cell>
+    <cell>
+      <c-name>Monthly rent comparison</c-name>
+      <c-input><input id="e17" data-cookie="rent"></c-input>
+    </cell>
+    <cell>
+      <c-name>Loan amount</c-name>
+      <c-input><input id="u0" disabled></c-input>
+    </cell>
+    <cell>
+      <c-name>Monthly mortgage insurance</c-name>
+      <c-input><input id="u11m" disabled></c-input>
+    </cell>
+    <cell>
+      <c-name>Monthly principal &amp; interest</c-name>
+      <c-input><input id="u91" disabled></c-input>
+    </cell>
+    <cell>
+      <c-name>Monthly taxes, insurance, dues</c-name>
+      <c-input><input id="u92" disabled></c-input>
+    </cell>
+    <cell>
+      <c-name>Total monthly payments</c-name>
+      <c-input><input id="u94a" disabled></c-input>
+    </cell>
+    <cell>
+      <c-name>Monthly mortgage payment</c-name>
+      <c-input><input id="u93" disabled></c-input>
+    </cell>
+    <cell>
+      <c-name>Years to pay off</c-name>
+      <c-input><input id="u96a" disabled></c-input>
+    </cell>
+    <cell>
+      <c-name>Number of payments</c-name>
+      <c-input><input id="u95" disabled></c-input>
+    </cell>
+    <cell>
+      <c-name>Total mortgage payments</c-name>
+      <c-input><input id="u97" disabled></c-input>
+    </cell>
+    <cell>
+      <c-name>Total interest</c-name>
+      <c-input><input id="u98" disabled></c-input>
+    </cell>
+    <cell>
+      <c-name>Yearly rent</c-name>
+      <c-input><input id="u17" disabled></c-input>
+    </cell>
+  </column>
+</div>
+
+<div id="main" class="main">
+
+  <div class="insight">
+    With
+    <i-input>$<input id="e4z" data-cookie="down"></i-input>
+    paid at closing, a
+    <i-input>$<input id="e1z" data-cookie="price"></i-input>
+    home<!-- in
+    <i-input><input id="e19z" data-cookie="locality"></i-input>-->
+    costs about
+    <i-input class="disabled">$<input id="u94z" disabled></i-input>
+    per month for
+    <i-input class="disabled"><input id="u96z" disabled></i-input>
+    years
   </div>
+
+  <column class="visualization">
+    <div id="sparkline" class="sparkline"></div>
+    <row id="sparkline_dates" class="sparkline_dates"></row>
+  </column>
+
+  <column class="checkboxes">
+    <cell><input type="checkbox" id="cb-balance" checked> Loan balance</cell>
+    <cell><input type="checkbox" id="cb-payments_t" checked> Total payments</cell>
+  </column>
+</div>
+
 </body>
 </html>
