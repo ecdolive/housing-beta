@@ -15,10 +15,11 @@ body {
 }
 a {
   text-decoration: none;
-  color: rgba(0,60,120,.5);
+  color: rgba(0,136,204,.5);
+  transition: color .3s;
 }
 a:hover {
-  color: rgba(0,60,120,1);
+  color: rgba(0,136,204,1);
   text-decoration: underline;
 }
 .noselect {
@@ -145,6 +146,20 @@ th {
   .btn-open:hover {
     opacity: 1;
   }
+.button {
+  background-color: rgba(0,136,204,0);
+  border-radius: 4px;
+  color: rgb(0,136,204);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-transform: uppercase;
+  transition: background-color .2s, color .2s;
+}
+  .button:hover {
+    background-color: rgba(0,136,204,1);
+    color: rgb(255,255,255)
+  }
 .date {
   background-color: transparent;
   border: 1px solid rgba(0,0,0,.08);
@@ -189,7 +204,11 @@ th {
   right: 0;
 }
   .legal > a {
+    color: rgba(66,74,80,.4);
     text-decoration: none;
+  }
+  .legal > a:hover {
+    color: rgba(66,74,80,.8);
   }
 .menu {
   background-color: #fcfcfc;
@@ -201,7 +220,7 @@ th {
   top: 0;
   transition: box-shadow .3s, left .3s, width .3s;
   width: 360px;
-  z-index: 9;
+  z-index: 10;
   -webkit-overflow-scrolling: touch;
 }
 body.menu-closed > .menu {
@@ -239,6 +258,14 @@ body.menu-closed > .menu {
 }
   body.menu-closed > .main {
     margin-left: 0;
+  }
+  .main > .tint {
+    background-color: rgba(0,0,0,.3);
+    display: none;
+    height: 100vh;
+    position: fixed;
+    width: 100vw;
+    z-index: 9;
   }
   .main > .insight {
     flex: 1;
@@ -313,28 +340,21 @@ body.menu-closed > .menu {
 and (max-width : 1023px) {
 /*and (max-width : 1159px) {*/
 /*and (max-width : 1479px) {*/
-  body {
-
+  .main > .insight {
+    max-width: 500px;
   }
-  .main {
-
+  .main > .visualization {
+    max-width: 500px;
   }
-    .main > .insight {
-      max-width: 500px;
-    }
-    .main > .visualization {
-      max-width: 500px;
-    }
-    .main > .checkboxes {
-      max-width: 500px;
-    }
+  .main > .checkboxes {
+    max-width: 500px;
+  }
 }
 
 /* Mid-small width */
 @media only screen
 and (max-width : 859px) {
   body.menu-open {
-    background-color: rgba(0,0,0,.1);
     overflow: hidden;
   }
   .main {
@@ -342,6 +362,9 @@ and (max-width : 859px) {
   }
     .main > .insight {
       margin-top: 40px;
+    }
+    body.menu-open > .main > .tint {
+      display: block;
     }
   .menu {
     box-shadow: none;
