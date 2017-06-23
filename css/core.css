@@ -18,6 +18,7 @@ a {
   color: rgba(0,60,120,.5);
 }
 a:hover {
+  color: rgba(0,60,120,1);
   text-decoration: underline;
 }
 .noselect {
@@ -181,6 +182,15 @@ th {
     color: #0088cc;
     /*opacity: 1;*/
   }
+.legal {
+  bottom: 0;
+  padding: 0 8px 8px 0;
+  position: fixed;
+  right: 0;
+}
+  .legal > a {
+    text-decoration: none;
+  }
 .menu {
   background-color: #fcfcfc;
   bottom: 0;
@@ -197,13 +207,14 @@ th {
 body.menu-closed > .menu {
   left: -360px;
 }
-  .menu > .m-header {
+  .menu > .header {
     background-color: #fcfcfc;
     display: block;
     position: fixed;
+    transition: inherit;
     width: 360px;
   }
-    .menu > .m-header > .btn-close {
+    .menu > .header > .btn-close {
       background: transparent url("data:image/svg+xml,%3Csvg width='16px' height='16px' viewBox='16 16 16 16' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cpath d='M25.121,23.707 L31.414,17.414 L30,16 L23.707,22.293 L17.414,16 L16,17.414 L22.293,23.707 L16,30 L17.414,31.414 L23.707,25.121 L30,31.414 L31.414,30 L25.121,23.707 Z' fill='%23000000'%3E%3C/path%3E%3C/svg%3E") center no-repeat;
       cursor: pointer;
       /*float: right;*/
@@ -212,20 +223,25 @@ body.menu-closed > .menu {
       transition: opacity .3s;
       width: 48px;
     }
-    .menu > .m-header > .btn-close:hover {
+    .menu > .header > .btn-close:hover {
       opacity: 1;
     }
   .menu > column:first-of-type {
     margin-top: 24px;
   }
 .main {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
   margin-left: 360px;
+  min-height: 100vh;
   transition: margin-left .3s;
 }
   body.menu-closed > .main {
     margin-left: 0;
   }
   .main > .insight {
+    flex: 1;
     font-size: 28px;
     line-height: 38px;
     margin: 8px auto;
@@ -254,10 +270,12 @@ body.menu-closed > .menu {
         color: inherit;
       }
   .main > .visualization {
+    display: none;
     margin: 0 auto;
     max-width: 664px;
   }
   .main > .checkboxes {
+    display: none;
     margin: 20px auto auto;
     max-width: 664px;
   }
@@ -358,6 +376,11 @@ and (max-width : 479px) {
     .date:hover {
       border-left: 1px solid rgba(0,0,0,.1);
     }
+    cell > c-input > input,
+    .date > select,
+    .date > select:last-child {
+      padding: 0;
+    }
   .main {
     margin-left: auto;
   }
@@ -368,12 +391,12 @@ and (max-width : 479px) {
       color: transparent;
     }
   .menu {
-    width: 100%;
+    width: 280px;
   }
     body.menu-closed > .menu {
       left: -100%;
     }
-    .menu > .m-header {
-      width: 100%;
+    .menu > .header {
+      width: 280px;
     }
 }
