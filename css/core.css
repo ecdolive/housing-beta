@@ -9,7 +9,7 @@ body, input, select {
   font-weight: 400;
 }
 body {
-  background-color: #f5f5f5;
+  background-color: #f0f0f0;
   margin: 0;
   transition: background-color .3s;
 }
@@ -83,16 +83,14 @@ cell {
       margin: 0;
       width: auto;
     }
-    cell > c-input > input:disabled,
-    cell > c-input > input[disabled] {
+    cell > c-input > input:disabled {
       background-color: transparent;
       border: 1px solid rgba(0,0,0,0);
       color: rgba(0,0,0,.5);
       font-weight: inherit;
       -webkit-text-fill-color: rgba(0,0,0,.5);
     }
-      cell > c-input > input:disabled:hover,
-      cell > c-input > input[disabled]:hover {
+      cell > c-input > input:disabled:hover {
         border: 1px solid rgba(0,0,0,0);
       }
   cell > c-name {
@@ -264,7 +262,7 @@ body.menu-closed > .menu {
 .main {
   align-items: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-left: 360px;
   min-height: 100vh;
   transition: margin-left .3s;
@@ -280,6 +278,57 @@ body.menu-closed > .menu {
     width: 100vw;
     z-index: 9;
   }
+  .main > .locations {
+    display: flex;
+    /*flex: 1;*/
+    margin: 140px auto 72px;
+    text-align: center;
+    transition: margin .3s;
+  }
+    .main > .locations > li {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      width: 100px;
+    }
+      .main > .locations > li > .avatar {
+        background: #fff center/cover no-repeat;
+        border-radius: 40px;
+        box-shadow: inset 0 0 0 2px rgba(0,0,0,.1);
+        -webkit-filter: brightness(100%) contrast(90%) opacity(20%) saturate(20%);
+        filter: brightness(100%) contrast(90%) opacity(20%) saturate(20%);
+        height: 72px;
+        position: relative;
+        transition: filter .3s;
+        width: 72px;
+        }
+            .main > .locations > li > .avatar.custom { background-image: url(../img/custom.png); }
+            .main > .locations > li > .avatar.atlanta { background-image: url(../img/atlanta.png); }
+            .main > .locations > li > .avatar.chicago { background-image: url(../img/chicago.png); }
+            .main > .locations > li > .avatar.san-francisco { background-image: url(../img/san-francisco.png); }
+            .main > .locations > li > .avatar.seattle { background-image: url(../img/seattle.png); }
+            .main > .locations > li > .avatar.more { background-image: url(../img/more.png); }
+          .main > .locations > li:hover > .avatar {
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,.1), 0 3px 12px rgba(0,0,0,.15);
+            -webkit-filter: brightness(100%) contrast(95%) opacity(60%) saturate(60%);
+            filter: brightness(100%) contrast(95%) opacity(60%) saturate(60%);
+          }
+          .main > .locations > li.selected > .avatar,
+          .main > .locations > li.selected:hover > .avatar {
+            box-shadow: 0 3px 12px rgba(0,0,0,.15);
+            -webkit-filter: none;
+            filter: none;
+          }
+      .main > .locations > li > .label {
+        color: rgba(66,74,80,.3);
+        margin-top: 8px;
+        transition: color .3s;
+      }
+        .main > .locations > li.selected > .label,
+        .main > .locations > li:hover > .label {
+          color: rgb(66,74,80);
+        }
   .main > .insight {
     flex: 1;
     font-size: 28px;
@@ -294,8 +343,7 @@ body.menu-closed > .menu {
       font-weight: 700;
       white-space: nowrap;
     }
-      .main > .insight > i-input.disabled,
-      .main > .insight > i-input[disabled] {
+      .main > .insight > i-input.disabled {
         color: inherit;
         -webkit-text-fill-color: #424a50;
       }
@@ -308,8 +356,7 @@ body.menu-closed > .menu {
         outline: none;
         width: 0;
       }
-      .main > .insight input:disabled,
-      .main > .insight input[disabled] {
+      .main > .insight input:disabled {
         color: inherit;
         -webkit-text-fill-color: #424a50;
       }

@@ -17,6 +17,7 @@
   <script src="lib/housing.calculate.js"></script>
   <script src="lib/housing.listeners.js"></script>
   <script src="lib/housing.init.js"></script>
+  <script src="lib/housing.locations.js"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -93,11 +94,11 @@
     </cell>-->
     <cell>
       <c-name>County millage rate</c-name>
-      <c-input><input id="e14" data-cookie="county"></c-input>
+      <c-input><input id="e14" data-cookie="millage-county"></c-input>
     </cell>
     <cell>
       <c-name>City millage rate</c-name>
-      <c-input><input id="e15" data-cookie="city"></c-input>
+      <c-input><input id="e15" data-cookie="millage-city"></c-input>
     </cell>
     <cell>
       <c-name>Assessment ratio (%)</c-name>
@@ -161,6 +162,33 @@
 <div id="main" class="main">
   <div id="tint" class="tint"></div>
 
+  <ul class="locations">
+    <li>
+      <div class="avatar custom"></div>
+      <div class="label">Custom</div>
+    </li>
+    <li class="selected">
+      <div class="avatar atlanta"></div>
+      <div class="label">Atlanta</div>
+    </li>
+    <li>
+      <div class="avatar chicago"></div>
+      <div class="label">Chicago</div>
+    </li>
+    <li>
+      <div class="avatar san-francisco"></div>
+      <div class="label">San Francisco</div>
+    </li>
+    <li>
+      <div class="avatar seattle"></div>
+      <div class="label">Seattle</div>
+    </li>
+    <li>
+      <div class="avatar more"></div>
+      <div class="label">more</div>
+    </li>
+  </ul>
+
   <div class="insight">
     With
     <i-input>$<input id="e4z" data-cookie="down"></i-input>
@@ -178,7 +206,7 @@
     </div>
   </div>
 
-  <column class="visualization">
+  <!--<column class="visualization">
     <div id="sparkline" class="sparkline"></div>
     <row id="sparkline_dates" class="sparkline_dates"></row>
   </column>
@@ -186,7 +214,7 @@
   <column class="checkboxes">
     <cell><input type="checkbox" id="cb-balance" checked> Loan balance</cell>
     <cell><input type="checkbox" id="cb-payments_t" checked> Total payments</cell>
-  </column>
+  </column>-->
 
   <div class="legal">
     <a target="_blank" href="https://www.binaryaffection.com/projects/realisticmortgage/privacypolicy/">Privacy policy</a> &middot;
