@@ -64,6 +64,7 @@ cell {
       border-radius: 4px;
       color: #0088cc;
       font-weight: 700;
+      margin: 0;
       outline: none;
       padding: 4px;
       text-align: right;
@@ -82,13 +83,15 @@ cell {
       margin: 0;
       width: auto;
     }
-    cell > c-input > input:disabled {
+    cell > c-input > input:disabled,
+    cell > c-input > input[disabled] {
       background-color: transparent;
       border: 1px solid rgba(0,0,0,0);
       color: rgba(0,0,0,.5);
       font-weight: inherit;
     }
-      cell > c-input > input:disabled:hover {
+      cell > c-input > input:disabled:hover,
+      cell > c-input > input[disabled]:hover {
         border: 1px solid rgba(0,0,0,0);
       }
   cell > c-name {
@@ -167,7 +170,6 @@ th {
   .date > select {
     background-color: #f9f9f9;
     border: none;
-    border-radius: 0;
     color: #0088cc;
     cursor: pointer;
     flex: 1;
@@ -180,9 +182,11 @@ th {
     -webkit-appearance: none;
   }
   .date > select:first-child {
+    border-radius: 4px 0 0 4px;
     padding-right: 0;
   }
   .date > select:last-child {
+    border-radius: 0 4px 4px 0;
     padding-left: 0;
   }
   .date:hover > select {
@@ -288,7 +292,8 @@ body.menu-closed > .menu {
       font-weight: 700;
       white-space: nowrap;
     }
-      .main > .insight > i-input.disabled {
+      .main > .insight > i-input.disabled,
+      .main > .insight > i-input[disabled] {
         color: inherit;
       }
       .main > .insight input {
@@ -300,7 +305,8 @@ body.menu-closed > .menu {
         outline: none;
         width: 0;
       }
-      .main > .insight input:disabled {
+      .main > .insight input:disabled,
+      .main > .insight input[disabled] {
         color: inherit;
       }
     .main > .insight > .details {
