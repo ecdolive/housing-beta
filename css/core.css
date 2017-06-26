@@ -9,7 +9,7 @@ body, input, select {
   font-weight: 400;
 }
 body {
-  background-color: #fcfcfc;
+  background-color: #f5f5f5;
   margin: 0;
   transition: background-color .3s;
 }
@@ -56,11 +56,11 @@ cell {
 }
   cell > c-input {
     display: flex;
-    flex: 5;
+    flex: 6;
   }
     cell > c-input > input {
-      background-color: transparent;
-      border: 1px solid rgba(0,0,0,.08);
+      background-color: #f9f9f9;
+      border: 1px solid rgba(0,0,0,.04);
       border-radius: 4px;
       color: #0088cc;
       font-weight: 700;
@@ -83,6 +83,7 @@ cell {
       width: auto;
     }
     cell > c-input > input:disabled {
+      background-color: transparent;
       border: 1px solid rgba(0,0,0,0);
       color: rgba(0,0,0,.5);
       font-weight: inherit;
@@ -97,14 +98,6 @@ cell {
     flex: 12;
     font-size: 14px;
   }
-g-header {
-  border-bottom: 1px solid rgba(0,0,0,.1);
-  color: rgba(0,0,0,.5);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 10px;
-  padding: 32px 16px 8px 16px;
-}
 table {
   margin-top: 48px;
 }
@@ -147,18 +140,21 @@ th {
     opacity: 1;
   }
 .button {
-  background-color: rgba(0,136,204,0);
+  background-color: rgba(255,255,255,1);
   border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1);
   color: rgb(0,136,204);
   cursor: pointer;
   font-size: 14px;
+  font-weight: 600;
   padding: 8px 16px;
   text-transform: uppercase;
-  transition: background-color .2s, color .2s;
+  transition: background-color .3s, box-shadow .3s, color .3s;
 }
   .button:hover {
-    background-color: rgba(0,136,204,1);
-    color: rgb(255,255,255)
+    background-color: #fff;
+    box-shadow: 0 3px 12px rgba(0,0,0,.15);
+    /*color: rgb(255,255,255)*/
   }
 .date {
   background-color: transparent;
@@ -169,7 +165,7 @@ th {
   border: 1px solid rgba(0,0,0,.3);
 }
   .date > select {
-    background-color: transparent;
+    background-color: #f9f9f9;
     border: none;
     border-radius: 0;
     color: #0088cc;
@@ -211,7 +207,7 @@ th {
     color: rgba(66,74,80,.8);
   }
 .menu {
-  background-color: #fcfcfc;
+  background-color: #fff;
   bottom: 0;
   box-shadow: 1px 0 0 rgba(0,0,0,.1);
   left: 0;
@@ -227,12 +223,23 @@ body.menu-closed > .menu {
   left: -360px;
 }
   .menu > .header {
-    background-color: #fcfcfc;
-    display: block;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    display: flex;
+    height: 48px;
     position: fixed;
     transition: inherit;
     width: 360px;
   }
+    .menu > .header > .title {
+      color: rgba(0,0,0,.5);
+      flex: 1;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 10px;
+      padding: 24px 16px 16px 16px;
+    }
     .menu > .header > .btn-close {
       background: transparent url("data:image/svg+xml,%3Csvg width='16px' height='16px' viewBox='16 16 16 16' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cpath d='M25.121,23.707 L31.414,17.414 L30,16 L23.707,22.293 L17.414,16 L16,17.414 L22.293,23.707 L16,30 L17.414,31.414 L23.707,25.121 L30,31.414 L31.414,30 L25.121,23.707 Z' fill='%23000000'%3E%3C/path%3E%3C/svg%3E") center no-repeat;
       cursor: pointer;
@@ -246,7 +253,7 @@ body.menu-closed > .menu {
       opacity: 1;
     }
   .menu > column:first-of-type {
-    margin-top: 24px;
+    margin-top: 64px;
   }
 .main {
   align-items: center;
@@ -296,6 +303,9 @@ body.menu-closed > .menu {
       .main > .insight input:disabled {
         color: inherit;
       }
+    .main > .insight > .details {
+      margin-top: 16px;
+    }
   .main > .visualization {
     display: none;
     margin: 0 auto;
@@ -381,7 +391,7 @@ and (max-width : 479px) {
     border-bottom: 1px solid rgba(0,0,0,.1);
     height: 48px;
     margin: 0;
-    padding: 0 12px 0 16px;
+    padding: 0 0 0 16px;
   }
     cell > c-input {
       border-left: 1px solid rgba(0,0,0,.1);
@@ -402,7 +412,7 @@ and (max-width : 479px) {
     cell > c-input > input,
     .date > select,
     .date > select:last-child {
-      padding: 0;
+      padding: 0 12px 0 0;
     }
   .main {
     margin-left: auto;
@@ -416,6 +426,9 @@ and (max-width : 479px) {
   .menu {
     width: 280px;
   }
+    .menu > column:first-of-type {
+      margin-top: 48px;
+    }
     body.menu-closed > .menu {
       left: -100%;
     }
