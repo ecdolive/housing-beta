@@ -89,6 +89,7 @@ cell {
       border: 1px solid rgba(0,0,0,0);
       color: rgba(0,0,0,.5);
       font-weight: inherit;
+      -webkit-text-fill-color: rgba(0,0,0,.5);
     }
       cell > c-input > input:disabled:hover,
       cell > c-input > input[disabled]:hover {
@@ -295,6 +296,7 @@ body.menu-closed > .menu {
       .main > .insight > i-input.disabled,
       .main > .insight > i-input[disabled] {
         color: inherit;
+        -webkit-text-fill-color: #424a50;
       }
       .main > .insight input {
         background-color: transparent;
@@ -308,6 +310,7 @@ body.menu-closed > .menu {
       .main > .insight input:disabled,
       .main > .insight input[disabled] {
         color: inherit;
+        -webkit-text-fill-color: #424a50;
       }
     .main > .insight > .details {
       margin-top: 16px;
