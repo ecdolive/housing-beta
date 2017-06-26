@@ -175,6 +175,7 @@ th {
     cursor: pointer;
     flex: 1;
     font-weight: 700;
+    margin: 0;
     outline: none;
     padding: 4px;
     text-align-last: center;
