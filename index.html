@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,15 +93,15 @@
     </cell>-->
     <cell>
       <c-name>County millage rate</c-name>
-      <c-input><input id="e14" data-cookie="millage-county"></c-input>
+      <c-input><input id="e14" data-cookie="mill_county"></c-input>
     </cell>
     <cell>
       <c-name>City millage rate</c-name>
-      <c-input><input id="e15" data-cookie="millage-city"></c-input>
+      <c-input><input id="e15" data-cookie="mill_city"></c-input>
     </cell>
     <cell>
       <c-name>Assessment ratio (%)</c-name>
-      <c-input><input id="e18" data-cookie="assessment"></c-input>
+      <c-input><input id="e18" data-cookie="assessment_ratio"></c-input>
     </cell>
     <cell>
       <c-name>Yearly appreciation rate (%)</c-name>
@@ -162,31 +161,31 @@
 <div id="main" class="main">
   <div id="tint" class="tint"></div>
 
-  <ul class="locations">
-    <li>
+  <ul id="locations" class="locations">
+    <li data-cookie="location" data-value="custom">
       <div class="avatar custom"></div>
       <div class="label">Custom</div>
     </li>
-    <li class="selected">
+    <li data-cookie="location" data-value="atlanta" class="selected">
       <div class="avatar atlanta"></div>
       <div class="label">Atlanta</div>
     </li>
-    <li>
+    <li data-cookie="location" data-value="chicago">
       <div class="avatar chicago"></div>
       <div class="label">Chicago</div>
     </li>
-    <li>
+    <li data-cookie="location" data-value="san_francisco">
       <div class="avatar san-francisco"></div>
       <div class="label">San Francisco</div>
     </li>
-    <li>
+    <li data-cookie="location" data-value="seattle">
       <div class="avatar seattle"></div>
       <div class="label">Seattle</div>
     </li>
-    <li>
+    <!--<li data-cookie="location" data-value="">
       <div class="avatar more"></div>
       <div class="label">more</div>
-    </li>
+    </li>-->
   </ul>
 
   <div class="insight">
