@@ -281,16 +281,20 @@ body.menu-closed > .menu {
   .main > .locations {
     display: flex;
     /*flex: 1;*/
-    margin: 140px auto 72px;
+    margin: 16vh auto 8vh;
+    max-width: 680px;
     text-align: center;
     transition: margin .3s;
+    overflow: auto;
+    max-width: 95vw;
   }
     .main > .locations > li {
       align-items: center;
       cursor: pointer;
       display: flex;
+      flex: 1;
       flex-direction: column;
-      width: 100px;
+      min-width: 96px;
     }
       .main > .locations > li > .avatar {
         background: #fff center/cover no-repeat;
@@ -333,7 +337,7 @@ body.menu-closed > .menu {
     flex: 1;
     font-size: 28px;
     line-height: 38px;
-    margin: 8px auto;
+    margin: 0 16px;
     max-width: 664px;
     text-align: center;
     transition: margin .3s;
@@ -427,8 +431,18 @@ and (max-width : 859px) {
   .main {
     margin-left: auto;
   }
+    .main > .locations > li {
+      min-width: 90px;
+    }
+      .main > .locations > li > .avatar {
+        height: 64px;
+        width: 64px;
+      }
+      .main > .locations > li > .label {
+        font-size: 12px;
+      }
     .main > .insight {
-      margin-top: 40px;
+      /*margin-top: 40px;*/
     }
     body.menu-open > .main > .tint {
       display: block;
@@ -474,6 +488,19 @@ and (max-width : 479px) {
   .main {
     margin-left: auto;
   }
+    .main > .locations {
+      margin-top: 48px;
+    }
+      .main > .locations > li {
+        min-width: 56px;
+      }
+        .main > .locations > li > .avatar {
+          height: 48px;
+          width: 48px;
+        }
+        .main > .locations > li > .label {
+          font-size: 11px;
+        }
     .sparkline_dates > div {
       overflow: overlay;
     }
