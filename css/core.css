@@ -285,7 +285,6 @@ body.menu-closed > .menu {
     max-width: 680px;
     text-align: center;
     transition: margin .3s;
-    overflow: auto;
     max-width: 95vw;
   }
     .main > .locations > li {
