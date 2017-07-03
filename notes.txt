@@ -1,0 +1,41 @@
+// order of operations...
+  defaults_set() // builds global "values" object
+  cookies_get() // updates values in "values" object with user's changes
+  calculate()
+
+
+// existing interactions
+
+  on page load...
+    location_set('atlanta')
+    cookies_get()
+    date_options()
+    defaults()
+    calculate()
+
+  on city select...
+    change tax rate input value
+    calculate()
+
+  on input edit...
+    handle cookie
+    calculate(input id, input value)
+
+// changes to existing interactions
+
+  on input edit...
+    handle cookie
+    change input value
+    calculate()
+
+// create new interactions
+
+  on reset input...
+    delete cookie
+    set input to default value
+    calculate()
+
+  on reset all inputs...
+    delete all cookies
+    set all inputs to default value
+    calculate()
