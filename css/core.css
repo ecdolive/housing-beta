@@ -501,6 +501,10 @@ and (max-width : 479px) {
         .main > .locations > li > .label {
           font-size: 11px;
         }
+    .main > .insight {
+      font-size: 18px;
+      line-height: 26px;
+    }
     .sparkline_dates > div {
       overflow: overlay;
     }
