@@ -6,6 +6,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Purchasing a home is a big commitment, and we believe everyone deserves a complete picture of the real costs of buying a home. Realistic Mortgage provides insight into your expected net monthly cost based on local market variables.">
+  <meta name="keywords" content="mortgage,realistic,actual,cost,tax,pmi,Seattle,San Francisco,Chicago,Dallas,Austin,Atlanta,Los Angeles,New York,Washington,Denver,Charlotte,Fort Worth,Phoenix">
   <title>Realistic mortgage calculator</title>
   <link href="css/reset.css" rel="stylesheet">
   <link href="css/core.css" rel="stylesheet">
@@ -27,14 +29,12 @@
   </script>
 </head>
 <body class="menu-closed">
-
 <div id="btn-open" class="btn-open"></div>
-
-<div id="menu" class="menu">
-  <row class="header">
+<section id="menu" class="menu">
+  <header>
     <div class="title">Cost details</div>
     <div id="btn-close" class="btn-close"></div>
-  </row>
+  </header>
   <column>
     <cell>
       <c-name>Purchase date</c-name>
@@ -144,11 +144,9 @@
       <c-input><input id="u17" disabled></c-input>
     </cell>
   </column>
-</div>
-
-<div id="main" class="main">
+</section>
+<main id="main" class="main">
   <div id="tint" class="tint"></div>
-
   <ul id="locations" class="locations">
     <li data-cookie="location" data-value="custom">
       <div class="avatar custom"></div>
@@ -175,8 +173,7 @@
       <div class="label">more</div>
     </li>-->
   </ul>
-
-  <div class="insight">
+  <section class="insight">
     With
     <i-input>$<input id="e4z" data-cookie="down"></i-input>
     paid at closing, a
@@ -189,8 +186,7 @@
     <div class="details">
       <span id="btn-details" class="button noselect">Details</span>
     </div>
-  </div>
-
+  </section>
   <!--<column class="visualization">
     <div id="sparkline" class="sparkline"></div>
     <row id="sparkline_dates" class="sparkline_dates"></row>
@@ -200,12 +196,11 @@
     <cell><input type="checkbox" id="cb-balance" checked> Loan balance</cell>
     <cell><input type="checkbox" id="cb-payments_t" checked> Total payments</cell>
   </column>-->
-
-  <div class="legal">
+  <footer class="legal">
     <a target="_blank" href="https://www.binaryaffection.com/projects/realisticmortgage/privacypolicy/">Privacy policy</a> &middot;
     <a target="_blank" href="https://www.binaryaffection.com/projects/realisticmortgage/tou/">Terms of use</a>
-  </div>
-</div>
+  </footer>
+</main>
 
 </body>
 </html>
