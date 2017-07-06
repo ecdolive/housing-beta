@@ -1,205 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="description" content="Purchasing a home is a big commitment, and we believe everyone deserves a complete picture of the real costs of buying a home. Realistic Mortgage provides insight into your expected net monthly cost based on local market variables.">
-  <meta name="keywords" content="mortgage,realistic,actual,cost,tax,pmi,Seattle,San Francisco,Chicago,Dallas,Austin,Atlanta,Los Angeles,New York,Washington,Denver,Charlotte,Fort Worth,Phoenix">
-  <title>Realistic mortgage calculator</title>
-  <link href="css/reset.css" rel="stylesheet">
-  <link href="css/core.css" rel="stylesheet">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-  <script src="lib/js.cookie.min.js"></script>
-  <script src="lib/jquery.sparkline.min.js"></script>
-  <script src="lib/housing.core.js"></script>
-  <script src="lib/housing.calculate.js"></script>
-  <script src="lib/housing.listeners.js"></script>
-  <script src="lib/housing.init.js"></script>
-  <script src="lib/housing.locations.js"></script>
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-23679923-7', 'auto');
-    ga('send', 'pageview');
-  </script>
-</head>
-<body class="menu-closed">
-<div id="btn-open" class="btn-open"></div>
-<section id="menu" class="menu">
-  <header>
-    <div class="title">Cost details</div>
-    <div id="btn-close" class="btn-close"></div>
-  </header>
-  <ul>
-    <li>
-      <div class="label">Purchase date</div>
-      <div class="input date">
-        <select id="e7" data-cookie="purchase_m"></select>
-        <select id="e8" data-cookie="purchase_y"></select>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Purchasing a home is a big commitment, and we believe everyone deserves a complete picture of the real costs of buying a home. Realistic Mortgage provides insight into your expected net monthly cost based on local market variables.">
+    <meta name="keywords" content="mortgage,realistic,actual,cost,tax,pmi,Seattle,San Francisco,Chicago,Dallas,Austin,Atlanta,Los Angeles,New York,Washington,Denver,Charlotte,Fort Worth,Phoenix">
+    <title>Realistic mortgage calculator</title>
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/core.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="lib/js.cookie.min.js"></script>
+    <script src="lib/jquery.sparkline.min.js"></script>
+    <script src="lib/housing.core.js"></script>
+    <script src="lib/housing.calculate.js"></script>
+    <script src="lib/housing.listeners.js"></script>
+    <script src="lib/housing.init.js"></script>
+    <script src="lib/housing.locations.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-23679923-7', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body class="menu-closed">
+    <div id="btn-open" class="btn-open"></div>
+    <section id="menu" class="menu">
+      <header>
+        <div class="title">Cost details</div>
+        <div id="btn-close" class="btn-close"></div>
+      </header>
+      <ul>
+        <li>
+          <div class="label">Purchase date</div>
+          <div class="input date">
+            <select id="e7" data-cookie="purchase_m"></select>
+            <select id="e8" data-cookie="purchase_y"></select>
+          </div>
+        </li>
+        <li>
+          <div class="label">Home purchase price</div>
+          <div class="input"><input id="e1a" data-cookie="price"></div>
+        </li>
+        <li>
+          <div class="label">Total at closing (<span id="e4b"></span>)</div>
+          <div class="input"><input id="e4a" data-cookie="down"></div>
+        </li>
+        <li>
+          <div class="label">Closing costs (<span id="e3b"></span>)</div>
+          <div class="input"><input id="e3a" data-cookie="closing"></div>
+        </li>
+        <li>
+          <div class="label">Down payment (<span id="e2b"></span>)</div>
+          <div class="input"><input id="e2a" data-cookie="down"></div>
+        </li>
+        <li>
+          <div class="label">Loan term</div>
+          <div class="input"><input id="e9" data-cookie="loan"></div>
+        </li>
+        <li>
+          <div class="label">Yearly interest rate (%)</div>
+          <div class="input"><input id="e10" data-cookie="interest"></div>
+        </li>
+        <li>
+          <div class="label">Yearly PMI rate (%)</div>
+          <div class="input"><input id="e11" data-cookie="pmi"></div>
+        </li>
+        <li>
+          <div class="label">Monthly HOA dues</div>
+          <div class="input"><input id="e12" data-cookie="hoa"></div>
+        </li>
+        <li>
+          <div class="label">Extra monthly payment</div>
+          <div class="input"><input id="e13" data-cookie="extra"></div>
+        </li>
+        <li>
+          <div class="label">Yearly homeowners insurance</div>
+          <div class="input"><input id="e5" data-cookie="hoi"></div>
+        </li>
+        <li>
+          <div class="label">Yearly flood insurance</div>
+          <div class="input"><input id="e6" data-cookie="flood"></div>
+        </li>
+        <li>
+          <div class="label">Effective tax rate (%)</div>
+          <div class="input"><input id="e14" data-cookie="tax"></div>
+        </li>
+        <li>
+          <div class="label">Yearly appreciation rate (%)</div>
+          <div class="input"><input id="e16" data-cookie="appreciation"></div>
+        </li>
+        <li>
+          <div class="label">Monthly rent comparison</div>
+          <div class="input"><input id="e17" data-cookie="rent"></div>
+        </li>
+        <li>
+          <div class="label">Loan amount</div>
+          <div class="input"><input id="u0" disabled></div>
+        </li>
+        <li>
+          <div class="label">Monthly mortgage insurance</div>
+          <div class="input"><input id="u11m" disabled></div>
+        </li>
+        <li>
+          <div class="label">Monthly principal &amp; interest</div>
+          <div class="input"><input id="u91" disabled></div>
+        </li>
+        <li>
+          <div class="label">Monthly taxes, insurance, dues</div>
+          <div class="input"><input id="u92" disabled></div>
+        </li>
+        <li>
+          <div class="label">Total monthly payments</div>
+          <div class="input"><input id="u94a" disabled></div>
+        </li>
+        <li>
+          <div class="label">Monthly mortgage payment</div>
+          <div class="input"><input id="u93" disabled></div>
+        </li>
+        <li>
+          <div class="label">Years to pay off</div>
+          <div class="input"><input id="u96a" disabled></div>
+        </li>
+        <li>
+          <div class="label">Number of payments</div>
+          <div class="input"><input id="u95" disabled></div>
+        </li>
+        <li>
+          <div class="label">Total mortgage payments</div>
+          <div class="input"><input id="u97" disabled></div>
+        </li>
+        <li>
+          <div class="label">Total interest</div>
+          <div class="input"><input id="u98" disabled></div>
+        </li>
+        <li>
+          <div class="label">Yearly rent</div>
+          <div class="input"><input id="u17" disabled></div>
+        </li>
+      </ul>
+    </section>
+    <main id="main" class="main">
+      <div id="tint" class="tint"></div>
+      <ul id="locations" class="locations">
+        <li data-cookie="location" data-value="custom">
+          <div class="avatar custom"></div>
+          <div class="label">Custom</div>
+        </li>
+        <li data-cookie="location" data-value="atlanta" class="selected">
+          <div class="avatar atlanta"></div>
+          <div class="label">Atlanta</div>
+        </li>
+        <li data-cookie="location" data-value="chicago">
+          <div class="avatar chicago"></div>
+          <div class="label">Chicago</div>
+        </li>
+        <li data-cookie="location" data-value="san_francisco">
+          <div class="avatar san-francisco"></div>
+          <div class="label">San Francisco</div>
+        </li>
+        <li data-cookie="location" data-value="seattle">
+          <div class="avatar seattle"></div>
+          <div class="label">Seattle</div>
+        </li>
+        <!--<li data-cookie="location" data-value="">
+          <div class="avatar more"></div>
+          <div class="label">more</div>
+        </li>-->
+      </ul>
+      <section class="insight">
+        With
+        <span class="input">$<input id="e4z" data-cookie="down"></span>
+        paid at closing, a
+        <span class="input">$<input id="e1z" data-cookie="price"></span>
+        home costs about
+        <span class="input disabled">$<input id="u94z" disabled></span>
+        per month for
+        <span class="input disabled"><input id="u96z" disabled></span>
+        years
+        <div class="details">
+          <span id="btn-details" class="button noselect">Details</span>
+        </div>
+      </section>
+      <!--<div class="visualization">
+        <div id="sparkline" class="sparkline"></div>
+        <div id="sparkline_dates" class="sparkline_dates"></div>
       </div>
-    </li>
-    <li>
-      <div class="label">Home purchase price</div>
-      <div class="input"><input id="e1a" data-cookie="price"></div>
-    </li>
-    <li>
-      <div class="label">Total at closing (<span id="e4b"></span>)</div>
-      <div class="input"><input id="e4a" data-cookie="down"></div>
-    </li>
-    <li>
-      <div class="label">Closing costs (<span id="e3b"></span>)</div>
-      <div class="input"><input id="e3a" data-cookie="closing"></div>
-    </li>
-    <li>
-      <div class="label">Down payment (<span id="e2b"></span>)</div>
-      <div class="input"><input id="e2a" data-cookie="down"></div>
-    </li>
-    <li>
-      <div class="label">Loan term</div>
-      <div class="input"><input id="e9" data-cookie="loan"></div>
-    </li>
-    <li>
-      <div class="label">Yearly interest rate (%)</div>
-      <div class="input"><input id="e10" data-cookie="interest"></div>
-    </li>
-    <li>
-      <div class="label">Yearly PMI rate (%)</div>
-      <div class="input"><input id="e11" data-cookie="pmi"></div>
-    </li>
-    <li>
-      <div class="label">Monthly HOA dues</div>
-      <div class="input"><input id="e12" data-cookie="hoa"></div>
-    </li>
-    <li>
-      <div class="label">Extra monthly payment</div>
-      <div class="input"><input id="e13" data-cookie="extra"></div>
-    </li>
-    <li>
-      <div class="label">Yearly homeowners insurance</div>
-      <div class="input"><input id="e5" data-cookie="hoi"></div>
-    </li>
-    <li>
-      <div class="label">Yearly flood insurance</div>
-      <div class="input"><input id="e6" data-cookie="flood"></div>
-    </li>
-    <li>
-      <div class="label">Effective tax rate (%)</div>
-      <div class="input"><input id="e14" data-cookie="tax"></div>
-    </li>
-    <li>
-      <div class="label">Yearly appreciation rate (%)</div>
-      <div class="input"><input id="e16" data-cookie="appreciation"></div>
-    </li>
-    <li>
-      <div class="label">Monthly rent comparison</div>
-      <div class="input"><input id="e17" data-cookie="rent"></div>
-    </li>
-    <li>
-      <div class="label">Loan amount</div>
-      <div class="input"><input id="u0" disabled></div>
-    </li>
-    <li>
-      <div class="label">Monthly mortgage insurance</div>
-      <div class="input"><input id="u11m" disabled></div>
-    </li>
-    <li>
-      <div class="label">Monthly principal &amp; interest</div>
-      <div class="input"><input id="u91" disabled></div>
-    </li>
-    <li>
-      <div class="label">Monthly taxes, insurance, dues</div>
-      <div class="input"><input id="u92" disabled></div>
-    </li>
-    <li>
-      <div class="label">Total monthly payments</div>
-      <div class="input"><input id="u94a" disabled></div>
-    </li>
-    <li>
-      <div class="label">Monthly mortgage payment</div>
-      <div class="input"><input id="u93" disabled></div>
-    </li>
-    <li>
-      <div class="label">Years to pay off</div>
-      <div class="input"><input id="u96a" disabled></div>
-    </li>
-    <li>
-      <div class="label">Number of payments</div>
-      <div class="input"><input id="u95" disabled></div>
-    </li>
-    <li>
-      <div class="label">Total mortgage payments</div>
-      <div class="input"><input id="u97" disabled></div>
-    </li>
-    <li>
-      <div class="label">Total interest</div>
-      <div class="input"><input id="u98" disabled></div>
-    </li>
-    <li>
-      <div class="label">Yearly rent</div>
-      <div class="input"><input id="u17" disabled></div>
-    </li>
-  </ul>
-</section>
-<main id="main" class="main">
-  <div id="tint" class="tint"></div>
-  <ul id="locations" class="locations">
-    <li data-cookie="location" data-value="custom">
-      <div class="avatar custom"></div>
-      <div class="label">Custom</div>
-    </li>
-    <li data-cookie="location" data-value="atlanta" class="selected">
-      <div class="avatar atlanta"></div>
-      <div class="label">Atlanta</div>
-    </li>
-    <li data-cookie="location" data-value="chicago">
-      <div class="avatar chicago"></div>
-      <div class="label">Chicago</div>
-    </li>
-    <li data-cookie="location" data-value="san_francisco">
-      <div class="avatar san-francisco"></div>
-      <div class="label">San Francisco</div>
-    </li>
-    <li data-cookie="location" data-value="seattle">
-      <div class="avatar seattle"></div>
-      <div class="label">Seattle</div>
-    </li>
-    <!--<li data-cookie="location" data-value="">
-      <div class="avatar more"></div>
-      <div class="label">more</div>
-    </li>-->
-  </ul>
-  <section class="insight">
-    With
-    <span class="input">$<input id="e4z" data-cookie="down"></span>
-    paid at closing, a
-    <span class="input">$<input id="e1z" data-cookie="price"></span>
-    home costs about
-    <span class="input disabled">$<input id="u94z" disabled></span>
-    per month for
-    <span class="input disabled"><input id="u96z" disabled></span>
-    years
-    <div class="details">
-      <span id="btn-details" class="button noselect">Details</span>
-    </div>
-  </section>
-  <!--<div class="visualization">
-    <div id="sparkline" class="sparkline"></div>
-    <div id="sparkline_dates" class="sparkline_dates"></div>
-  </div>
-  <div class="checkboxes">
-    <div class="input"><input type="checkbox" id="cb-balance" checked> Loan balance</div>
-    <div class="input"><input type="checkbox" id="cb-payments_t" checked> Total payments</div>
-  </div>-->
-  <footer class="legal">
-    <a target="_blank" href="https://www.binaryaffection.com/projects/realisticmortgage/privacypolicy/">Privacy policy</a> &middot;
-    <a target="_blank" href="https://www.binaryaffection.com/projects/realisticmortgage/tou/">Terms of use</a>
-  </footer>
-</main>
-
-</body>
+      <div class="checkboxes">
+        <div class="input"><input type="checkbox" id="cb-balance" checked> Loan balance</div>
+        <div class="input"><input type="checkbox" id="cb-payments_t" checked> Total payments</div>
+      </div>-->
+      <footer class="legal">
+        <a target="_blank" href="https://www.binaryaffection.com/projects/realisticmortgage/privacypolicy/">Privacy policy</a> &middot;
+        <a target="_blank" href="https://www.binaryaffection.com/projects/realisticmortgage/tou/">Terms of use</a>
+      </footer>
+    </main>
+  </body>
 </html>
