@@ -4,7 +4,6 @@ body, input, select {
   appearance: none;
   color: #424a50;
   font-family: -apple-system, '.SFNSText-Light', '.SFNSDisplay-Regular', 'Helvetica Neue', sans-serif;
-  /*font-family: 'Roboto', sans-serif;*/
   font-size: 14px;
   font-weight: 400;
 }
@@ -33,73 +32,6 @@ a:hover {
 }
 
 /* Common */
-column, row {
-  display: flex;
-  flex: 1;
-}
-column {
-  flex-direction: column;
-}
-row {
-  align-items: flex-start;
-  flex-direction: row;
-}
-cell {
-  align-items: center;
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  height: 32px;
-  justify-content: flex-end;
-  margin: 0 12px 0 16px;
-}
-  cell > c-input {
-    display: flex;
-    flex: 6;
-  }
-    cell > c-input > input {
-      background-color: #f9f9f9;
-      border: 1px solid rgba(0,0,0,.04);
-      border-radius: 4px;
-      color: #0088cc;
-      font-weight: 700;
-      margin: 0;
-      outline: none;
-      padding: 4px;
-      text-align: right;
-      transition: border .3s, box-shadow .3s;
-      width: 100%;
-    }
-      cell > c-input > input.slave {
-        color: rgba(0,0,0,.5);
-        font-weight: 400;
-      }
-      cell > c-input > input:hover,
-      cell > c-input > input:focus {
-        border: 1px solid rgba(0,0,0,.3);
-      }
-    cell > c-input > input[type='checkbox'] {
-      margin: 0;
-      width: auto;
-    }
-    cell > c-input > input:disabled {
-      background-color: transparent;
-      border: 1px solid rgba(0,0,0,0);
-      color: rgba(0,0,0,.5);
-      font-weight: inherit;
-      -webkit-text-fill-color: rgba(0,0,0,.5);
-    }
-      cell > c-input > input:disabled:hover {
-        border: 1px solid rgba(0,0,0,0);
-      }
-  cell > c-name {
-    align-items: center;
-    color: rgba(0,0,0,.5);
-    display: flex;
-    flex: 12;
-    font-size: 14px;
-  }
 table {
   margin-top: 48px;
 }
@@ -210,6 +142,7 @@ th {
   .legal > a:hover {
     color: rgba(66,74,80,.8);
   }
+
 .menu {
   background-color: #fff;
   bottom: 0;
@@ -258,9 +191,70 @@ body.menu-closed > .menu {
     .menu > header > .btn-close:hover {
       opacity: 1;
     }
-  .menu > column:first-of-type {
-    margin-top: 64px;
+  .menu > ul {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
   }
+    .menu > ul:first-of-type {
+      margin-top: 64px;
+    }
+      .menu > ul > li {
+        align-items: center;
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: 32px;
+        justify-content: flex-end;
+        margin: 0 12px 0 16px;
+      }
+        .menu > ul > li > .input {
+          display: flex;
+          flex: 6;
+        }
+          .menu > ul > li > .input > input {
+            background-color: #f9f9f9;
+            border: 1px solid rgba(0,0,0,.04);
+            border-radius: 4px;
+            color: #0088cc;
+            font-weight: 700;
+            margin: 0;
+            outline: none;
+            padding: 4px;
+            text-align: right;
+            transition: border .3s, box-shadow .3s;
+            width: 100%;
+          }
+            .menu > ul > li > .input > input.slave {
+              color: rgba(0,0,0,.5);
+              font-weight: 400;
+            }
+            .menu > ul > li > .input > input:hover,
+            .menu > ul > li > .input > input:focus {
+              border: 1px solid rgba(0,0,0,.3);
+            }
+          .menu > ul > li > .input > input[type='checkbox'] {
+            margin: 0;
+            width: auto;
+          }
+          .menu > ul > li > .input > input:disabled {
+            background-color: transparent;
+            border: 1px solid rgba(0,0,0,0);
+            color: rgba(0,0,0,.5);
+            font-weight: inherit;
+            -webkit-text-fill-color: rgba(0,0,0,.5);
+          }
+            .menu > ul > li > .input > input:disabled:hover {
+              border: 1px solid rgba(0,0,0,0);
+            }
+        .menu > ul > li > .label {
+          align-items: center;
+          color: rgba(0,0,0,.5);
+          display: flex;
+          flex: 12;
+          font-size: 14px;
+        }
 .main {
   align-items: center;
   display: flex;
@@ -343,12 +337,12 @@ body.menu-closed > .menu {
     text-align: center;
     transition: margin .3s;
   }
-    .main > .insight > i-input {
+    .main > .insight > .input {
       color: #0088cc;
       font-weight: 700;
       white-space: nowrap;
     }
-      .main > .insight > i-input.disabled {
+      .main > .insight > .input.disabled {
         color: inherit;
         -webkit-text-fill-color: #424a50;
       }
@@ -369,17 +363,28 @@ body.menu-closed > .menu {
       margin-top: 16px;
     }
   .main > .visualization {
-    display: none;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     margin: 0 auto;
     max-width: 664px;
   }
   .main > .checkboxes {
-    display: none;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     margin: 20px auto auto;
     max-width: 664px;
   }
-    .main > .checkboxes > cell {
+    .main > .checkboxes > .input {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      height: 32px;
       justify-content: flex-start;
+      margin: 0 12px 0 16px;
       visibility: hidden;
     }
 
@@ -388,7 +393,11 @@ body.menu-closed > .menu {
   position: relative;
 }
 .sparkline_dates {
+  align-items: flex-start;
   border-top: 1px solid rgba(0,0,0,.1);
+  display: flex;
+  flex: 1;
+  flex-direction: row;
   padding-top: 10px;
 }
   .sparkline_dates > div {
@@ -459,19 +468,19 @@ and (max-width : 859px) {
 /* Small width (phones) */
 @media only screen
 and (max-width : 479px) {
-  cell {
+  .menu > ul > li {
     border-bottom: 1px solid rgba(0,0,0,.1);
     height: 48px;
     margin: 0;
     padding: 0 0 0 16px;
   }
-    cell > c-input {
+    .menu > ul > li > .input {
       border-left: 1px solid rgba(0,0,0,.1);
       height: 100%;
     }
-    cell > c-input > input,
-    cell > c-input > input:hover,
-    cell > c-input > input:focus,
+    .menu > ul > li > .input > input,
+    .menu > ul > li > .input > input:hover,
+    .menu > ul > li > .input > input:focus,
     .date,
     .date:hover {
       border: 0;
@@ -481,7 +490,7 @@ and (max-width : 479px) {
     .date:hover {
       border-left: 1px solid rgba(0,0,0,.1);
     }
-    cell > c-input > input,
+    .menu > ul > li > .input > input,
     .date > select,
     .date > select:last-child {
       padding: 0 12px 0 0;
@@ -515,7 +524,7 @@ and (max-width : 479px) {
   .menu {
     width: 280px;
   }
-    .menu > column:first-of-type {
+    .menu > ul:first-of-type {
       margin-top: 48px;
     }
     body.menu-closed > .menu {
