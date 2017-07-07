@@ -92,6 +92,8 @@ th {
   }
 .legal {
   bottom: 0;
+  color: rgba(66,74,80,.4);
+  font-size: 12px;
   padding: 0 8px 8px 0;
   position: fixed;
   right: 0;
