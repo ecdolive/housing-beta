@@ -8,7 +8,7 @@ body, input, select {
   font-weight: 400;
 }
 body {
-  background-color: #f0f0f0;
+  background-color: #f6f6f6;
   margin: 0;
   transition: background-color .3s;
 }
@@ -264,10 +264,15 @@ body.menu-closed > .menu {
     width: 100vw;
     z-index: 9;
   }
+  .main > h1 {
+    font-family: 'Elsie', cursive;
+    font-size: 24px;
+    line-height: 52px;
+  }
   .main > .locations {
     display: flex;
     /*flex: 1;*/
-    margin: 16vh auto 8vh;
+    margin: 18vh auto 6vh;
     max-width: 680px;
     text-align: center;
     transition: margin .3s;
@@ -431,6 +436,11 @@ and (max-width : 859px) {
   .main {
     margin-left: auto;
   }
+    .main > h1 {
+      font-size: 18px;
+      line-height: 36px;
+      margin: 8px;
+    }
     .main > .locations > li {
       min-width: 90px;
     }
@@ -481,7 +491,7 @@ and (max-width : 479px) {
     margin-left: auto;
   }
     .main > .locations {
-      margin-top: 48px;
+      margin-top: 24px;
     }
       .main > .locations > li {
         min-width: 56px;
