@@ -44,6 +44,8 @@
     San Francisco http://www.sfassessor.org/sites/default/files/notice/FINAL_Notice%20of%20Assessed%20Value_Fact%20Sheet%20%286.10.2015%29.pdf
       http://www.socketsite.com/archives/2016/09/property-tax-rate-in-sf-slated-to-drop-and-where-the-dollars-will-go.html
     Seattle http://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=9195871120
+  // Average rent per city
+    https://www.rentjungle.com/average-rent-in-seattle-rent-trends/
 
 // e. references
   e1a - price
@@ -54,7 +56,7 @@
   e6 - flood
   e7 - month
   e8 - year
-  e9 - loan
+  e9 - loan / term
   e10 - interest
   e11 - pmi
   e12 - hoa
