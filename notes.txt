@@ -2,40 +2,65 @@
   defaults_set() // builds global "values" object
   cookies_get() // updates values in "values" object with user's changes
   calculate()
-
-
 // existing interactions
-
   on page load...
     location_set('atlanta')
     cookies_get()
     date_options()
     defaults()
     calculate()
-
   on city select...
     change tax rate input value
     calculate()
-
   on input edit...
     handle cookie
     calculate(input id, input value)
-
 // changes to existing interactions
-
   on input edit...
     handle cookie
     change input value
     calculate()
-
 // create new interactions
-
   on reset input...
     delete cookie
     set input to default value
     calculate()
-
   on reset all inputs...
     delete all cookies
     set all inputs to default value
     calculate()
+
+
+// References
+  // Effective tax rate calculation
+  https://taxfoundation.org/how-calculate-property-tax-liability-2/
+  http://www.cookcountyassessor.com/Resources/Residential-Tax-Bill.aspx
+    tax rate = (mill rate / 1000) * (assessment ratio / 100) * equalization factor
+    tax = market value * tax rate
+    with home owner exemption: tax - (homestead exemption * (mill rate / 1000))
+  // City tax rates references
+    Atlanta https://www.fultoncountytaxes.org/media/6682/millage_rates_thru_2016.pdf
+    Chicago http://www.cookcountyclerk.com/tsd/DocumentLibrary/2016%20Tax%20Rate%20Report.pdf
+    San Francisco http://www.sfassessor.org/sites/default/files/notice/FINAL_Notice%20of%20Assessed%20Value_Fact%20Sheet%20%286.10.2015%29.pdf
+      http://www.socketsite.com/archives/2016/09/property-tax-rate-in-sf-slated-to-drop-and-where-the-dollars-will-go.html
+    Seattle http://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=9195871120
+  // Average rent per city
+    https://www.rentjungle.com/average-rent-in-seattle-rent-trends/
+
+// e. references
+  e1a - price
+  e2a - down
+  e3a - closing
+  e4a - upfront
+  e5 - hoi
+  e6 - flood
+  e7 - month
+  e8 - year
+  e9 - loan / term
+  e10 - interest
+  e11 - pmi
+  e12 - hoa
+  e13 - extra
+  e14 - tax
+  e16 - appreciation
+  e17 - rent

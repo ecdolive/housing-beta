@@ -6,15 +6,17 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="description" content="Purchasing a home is a big commitment, and we believe everyone deserves a complete picture of the real costs of buying a home. Realistic Mortgage provides insight into your expected net monthly cost based on local market variables.">
-    <meta name="keywords" content="mortgage,realistic,actual,cost,tax,pmi,Seattle,San Francisco,Chicago,Dallas,Austin,Atlanta,Los Angeles,New York,Washington,Denver,Charlotte,Fort Worth,Phoenix">
-    <title>Realistic mortgage calculator</title>
+    <meta name="description" content="Wondering how much house you can afford? Use this mortgage calculator to get quick estimates of monthly payments or adjust the details for more accurate results.">
+    <meta name="keywords" content="monthly house payment, mortgage calculator, home loan calculator, monthly house payment calculator, how much house can I afford, how much house can i afford calculator, Seattle mortgage calculator, San Francisco mortgage calculator, Chicago mortgage calculator, Atlanta mortgage calculator, Provo mortgage calculator, Dallas mortgage calculator, Georgia mortgage calculator, simple monthly payments calculator">
+    <title>Realistic Mortgage | Simple Monthly Payments Calculator</title>
+    <link rel="canonical" href="http://realisticmortgage.com">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/core.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Elsie:900" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="lib/js.cookie.min.js"></script>
-    <script src="lib/jquery.sparkline.min.js"></script>
     <script src="lib/housing.core.js"></script>
     <script src="lib/housing.calculate.js"></script>
     <script src="lib/housing.listeners.js"></script>
@@ -40,8 +42,8 @@
         <li>
           <div class="label">Purchase date</div>
           <div class="input date">
-            <select id="e7" data-cookie="purchase_m"></select>
-            <select id="e8" data-cookie="purchase_y"></select>
+            <select id="e7" data-cookie="month"></select>
+            <select id="e8" data-cookie="year"></select>
           </div>
         </li>
         <li>
@@ -49,27 +51,27 @@
           <div class="input"><input id="e1a" data-cookie="price"></div>
         </li>
         <li>
-          <div class="label">Total at closing (<span id="e4b"></span>)</div>
-          <div class="input"><input id="e4a" data-cookie="down"></div>
+          <div class="label">Total upfront costs (<span id="e4b"></span>)</div>
+          <div class="input"><input id="e4a" data-cookie="upfront"></div>
         </li>
         <li>
-          <div class="label">Closing costs (<span id="e3b"></span>)</div>
+          <div class="label sub">Closing costs (<span id="e3b"></span>)</div>
           <div class="input"><input id="e3a" data-cookie="closing"></div>
         </li>
         <li>
-          <div class="label">Down payment (<span id="e2b"></span>)</div>
+          <div class="label sub">Down payment (<span id="e2b"></span>)</div>
           <div class="input"><input id="e2a" data-cookie="down"></div>
         </li>
         <li>
           <div class="label">Loan term</div>
-          <div class="input"><input id="e9" data-cookie="loan"></div>
+          <div class="input"><input id="e9" data-cookie="term"></div>
         </li>
         <li>
-          <div class="label">Yearly interest rate (%)</div>
+          <div class="label">Yearly interest rate</div>
           <div class="input"><input id="e10" data-cookie="interest"></div>
         </li>
         <li>
-          <div class="label">Yearly PMI rate (%)</div>
+          <div class="label">Yearly PMI rate</div>
           <div class="input"><input id="e11" data-cookie="pmi"></div>
         </li>
         <li>
@@ -89,11 +91,11 @@
           <div class="input"><input id="e6" data-cookie="flood"></div>
         </li>
         <li>
-          <div class="label">Effective tax rate (%)</div>
+          <div class="label">Effective tax rate</div>
           <div class="input"><input id="e14" data-cookie="tax"></div>
         </li>
         <li>
-          <div class="label">Yearly appreciation rate (%)</div>
+          <div class="label">Yearly appreciation rate</div>
           <div class="input"><input id="e16" data-cookie="appreciation"></div>
         </li>
         <li>
@@ -148,7 +150,7 @@
     </section>
     <main id="main" class="main">
       <div id="tint" class="tint"></div>
-      <h1>Realistic Mortgage</h1>
+      <h1>Realistic Mortgage Calculator</h1>
       <ul id="locations" class="locations">
         <li data-cookie="location" data-value="custom">
           <div class="avatar custom"></div>

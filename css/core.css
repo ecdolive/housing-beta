@@ -247,6 +247,14 @@ body.menu-closed > .menu {
           flex: 12;
           font-size: 14px;
         }
+          .menu > ul > li > .label.sub {
+            color: rgba(0,0,0,.3);
+            font-size: 13px;
+            text-indent: 16px;
+          }
+            .menu > ul > li > .label.sub > span {
+              text-indent: 0;
+            }
 .main {
   align-items: center;
   display: flex;
