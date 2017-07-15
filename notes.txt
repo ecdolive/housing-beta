@@ -64,3 +64,27 @@
   e14 - tax
   e16 - appreciation
   e17 - rent
+
+// old cookies
+cookies_remove("month");cookies_remove("term");cookies_remove("upfront");cookies_remove("year");
+
+Cookies.set("appreciation",'{"id":"e16","val":"2.7"}',{expires:3650});
+Cookies.set("assessment",'{"id":"e18","val":"50"}',{expires:3650});
+Cookies.set("closing",'{"id":"e3a","val":"7%"}',{expires:3650});
+Cookies.set("down",'{"id":"e4a","val":"77000"}',{expires:3650});
+Cookies.set("extra",'{"id":"e13","val":"70"}',{expires:3650});
+Cookies.set("flood",'{"id":"e6","val":"1700"}',{expires:3650});
+Cookies.set("hoa",'{"id":"e12","val":"70"}',{expires:3650});
+Cookies.set("hoi",'{"id":"e5","val":"2700"}',{expires:3650});
+Cookies.set("interest",'{"id":"e10","val":"3.7"}',{expires:3650});
+Cookies.set("loan",'{"id":"e9","val":"27"}',{expires:3650});
+Cookies.set("none","san_francisco",{expires:3650});
+Cookies.set("pmi",'{"id":"e11","val":"1.7"}',{expires:3650});
+Cookies.set("price",'{"id":"e1a","val":"700000"}',{expires:3650});
+Cookies.set("purchase_m",'{"id":"e7","val":"11"}',{expires:3650});
+Cookies.set("purchase_y",'{"id":"e8","val":"2007"}',{expires:3650});
+Cookies.set("rent",'{"id":"e17","val":"1700"}',{expires:3650});
+Cookies.set("tax",'{"id":"e14","val":"0.97"}',{expires:3650});
+
+document.cookie = "purchase_y={%22id%22:%22e8%22%2C%22val%22:%222018%22}; expires=Thu, 18 Dec 2013 12:00:00 UTC";
+purchase_m={%22id%22:%22e7%22%2C%22val%22:%2211%22}; rent={%22id%22:%22e17%22%2C%22val%22:%221700%22}; appreciation={%22id%22:%22e16%22%2C%22val%22:%222.7%22}; tax={%22id%22:%22e14%22%2C%22val%22:%220.97%22}; flood={%22id%22:%22e6%22%2C%22val%22:%221700%22}; hoi={%22id%22:%22e5%22%2C%22val%22:%222700%22}; extra={%22id%22:%22e13%22%2C%22val%22:%2270%22}; hoa={%22id%22:%22e12%22%2C%22val%22:%2270%22}; pmi={%22id%22:%22e11%22%2C%22val%22:%221.7%22}; interest={%22id%22:%22e10%22%2C%22val%22:%223.7%22}; loan={%22id%22:%22e9%22%2C%22val%22:%2227%22}; closing={%22id%22:%22e3a%22%2C%22val%22:%227%25%22}; down={%22id%22:%22e4a%22%2C%22val%22:%2277000%22}; price={%22id%22:%22e1a%22%2C%22val%22:%22700000%22}; none=san_francisco;"
