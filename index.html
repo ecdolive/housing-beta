@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Elsie:900" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="lib/js.cookie.min.js"></script>
+    <script src="lib/housing.api.js"></script>
     <script src="lib/housing.core.js"></script>
     <script src="lib/housing.calculate.js"></script>
     <script src="lib/housing.listeners.js"></script>
@@ -42,65 +43,65 @@
         <li>
           <div class="label">Purchase date</div>
           <div class="input date">
-            <select id="e7" data-cookie="month"></select>
-            <select id="e8" data-cookie="year"></select>
+            <select id="month" data-cookie="month"></select>
+            <select id="year" data-cookie="year"></select>
           </div>
         </li>
         <li>
           <div class="label">Home purchase price</div>
-          <div class="input"><input id="e1a" data-cookie="price"></div>
+          <div class="input"><input id="price" data-cookie="price"></div>
         </li>
         <li>
-          <div class="label">Total upfront costs (<span id="e4b"></span>)</div>
-          <div class="input"><input id="e4a" data-cookie="upfront"></div>
+          <div class="label">Total upfront costs (<span id="upfront_opposite"></span>)</div>
+          <div class="input"><input id="upfront" data-cookie="upfront"></div>
         </li>
         <li>
-          <div class="label sub">Closing costs (<span id="e3b"></span>)</div>
-          <div class="input"><input id="e3a" data-cookie="closing"></div>
+          <div class="label sub">Closing costs (<span id="closing_opposite"></span>)</div>
+          <div class="input"><input id="closing" data-cookie="closing"></div>
         </li>
         <li>
-          <div class="label sub">Down payment (<span id="e2b"></span>)</div>
-          <div class="input"><input id="e2a" data-cookie="down"></div>
+          <div class="label sub">Down payment (<span id="down_opposite"></span>)</div>
+          <div class="input"><input id="down" data-cookie="down"></div>
         </li>
         <li>
           <div class="label">Loan term</div>
-          <div class="input"><input id="e9" data-cookie="term"></div>
+          <div class="input"><input id="term" data-cookie="term"></div>
         </li>
         <li>
           <div class="label">Yearly interest rate</div>
-          <div class="input"><input id="e10" data-cookie="interest"></div>
+          <div class="input"><input id="interest" data-cookie="interest"></div>
         </li>
         <li>
           <div class="label">Yearly PMI rate</div>
-          <div class="input"><input id="e11" data-cookie="pmi"></div>
+          <div class="input"><input id="pmi" data-cookie="pmi"></div>
         </li>
         <li>
           <div class="label">Monthly HOA dues</div>
-          <div class="input"><input id="e12" data-cookie="hoa"></div>
+          <div class="input"><input id="hoa" data-cookie="hoa"></div>
         </li>
         <li>
           <div class="label">Extra monthly payment</div>
-          <div class="input"><input id="e13" data-cookie="extra"></div>
+          <div class="input"><input id="extra" data-cookie="extra"></div>
         </li>
         <li>
           <div class="label">Yearly homeowners insurance</div>
-          <div class="input"><input id="e5" data-cookie="hoi"></div>
+          <div class="input"><input id="hoi" data-cookie="hoi"></div>
         </li>
         <li>
           <div class="label">Yearly flood insurance</div>
-          <div class="input"><input id="e6" data-cookie="flood"></div>
+          <div class="input"><input id="flood" data-cookie="flood"></div>
         </li>
         <li>
           <div class="label">Effective tax rate</div>
-          <div class="input"><input id="e14" data-cookie="tax"></div>
+          <div class="input"><input id="tax" data-cookie="tax"></div>
         </li>
         <li>
           <div class="label">Yearly appreciation rate</div>
-          <div class="input"><input id="e16" data-cookie="appreciation"></div>
+          <div class="input"><input id="appreciation" data-cookie="appreciation"></div>
         </li>
         <li>
           <div class="label">Monthly rent comparison</div>
-          <div class="input"><input id="e17" data-cookie="rent"></div>
+          <div class="input"><input id="rent" data-cookie="rent"></div>
         </li>
         <li>
           <div class="label">Loan amount</div>
