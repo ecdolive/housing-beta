@@ -299,7 +299,7 @@ body.menu-closed > .menu {
       .main > .locations > li > .avatar {
         background: #fff center/cover no-repeat;
         border-radius: 40px;
-        box-shadow: inset 0 0 0 2px rgba(0,0,0,.1), 0 0 0 rgb(0,0,0);
+        box-shadow: inset 0 0 0 2px rgba(0,0,0,1), 0 0 0 rgb(0,0,0);
         -webkit-filter: brightness(100%) contrast(90%) opacity(20%) saturate(20%);
         filter: brightness(100%) contrast(90%) opacity(20%) saturate(20%);
         height: 72px;
@@ -307,12 +307,6 @@ body.menu-closed > .menu {
         transition: box-shadow .3s, filter .3s;
         width: 72px;
         }
-            .main > .locations > li > .avatar.custom { background-image: url(../img/custom.png); }
-            .main > .locations > li > .avatar.atlanta { background-image: url(../img/atlanta.png); }
-            .main > .locations > li > .avatar.chicago { background-image: url(../img/chicago.png); }
-            .main > .locations > li > .avatar.san-francisco { background-image: url(../img/san-francisco.png); }
-            .main > .locations > li > .avatar.seattle { background-image: url(../img/seattle.png); }
-            .main > .locations > li > .avatar.more { background-image: url(../img/more.png); }
           .main > .locations > li:hover > .avatar {
             box-shadow: inset 0 0 0 1px rgba(0,0,0,.1), 0 0 0 rgb(0,0,0);
             -webkit-filter: brightness(100%) contrast(95%) opacity(60%) saturate(60%);

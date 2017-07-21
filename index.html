@@ -17,11 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Elsie:900" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="lib/js.cookie.min.js"></script>
-    <script src="lib/housing.core.js"></script>
-    <script src="lib/housing.calculate.js"></script>
-    <script src="lib/housing.listeners.js"></script>
-    <script src="lib/housing.init.js"></script>
-    <script src="lib/housing.locations.js"></script>
+    <script src="lib/housing.min.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -42,65 +38,65 @@
         <li>
           <div class="label">Purchase date</div>
           <div class="input date">
-            <select id="e7" data-cookie="month"></select>
-            <select id="e8" data-cookie="year"></select>
+            <select id="month" data-cookie="month"></select>
+            <select id="year" data-cookie="year"></select>
           </div>
         </li>
         <li>
           <div class="label">Home purchase price</div>
-          <div class="input"><input id="e1a" data-cookie="price"></div>
+          <div class="input"><input id="price" data-cookie="price"></div>
         </li>
         <li>
-          <div class="label">Total upfront costs (<span id="e4b"></span>)</div>
-          <div class="input"><input id="e4a" data-cookie="upfront"></div>
+          <div class="label">Total upfront costs (<span id="upfront_opposite"></span>)</div>
+          <div class="input"><input id="upfront" data-cookie="upfront"></div>
         </li>
         <li>
-          <div class="label sub">Closing costs (<span id="e3b"></span>)</div>
-          <div class="input"><input id="e3a" data-cookie="closing"></div>
+          <div class="label sub">Closing costs (<span id="closing_opposite"></span>)</div>
+          <div class="input"><input id="closing" data-cookie="closing"></div>
         </li>
         <li>
-          <div class="label sub">Down payment (<span id="e2b"></span>)</div>
-          <div class="input"><input id="e2a" data-cookie="down"></div>
+          <div class="label sub">Down payment (<span id="down_opposite"></span>)</div>
+          <div class="input"><input id="down" data-cookie="down"></div>
         </li>
         <li>
           <div class="label">Loan term</div>
-          <div class="input"><input id="e9" data-cookie="term"></div>
+          <div class="input"><input id="term" data-cookie="term"></div>
         </li>
         <li>
           <div class="label">Yearly interest rate</div>
-          <div class="input"><input id="e10" data-cookie="interest"></div>
+          <div class="input"><input id="interest" data-cookie="interest"></div>
         </li>
         <li>
           <div class="label">Yearly PMI rate</div>
-          <div class="input"><input id="e11" data-cookie="pmi"></div>
+          <div class="input"><input id="pmi" data-cookie="pmi"></div>
         </li>
         <li>
           <div class="label">Monthly HOA dues</div>
-          <div class="input"><input id="e12" data-cookie="hoa"></div>
+          <div class="input"><input id="hoa" data-cookie="hoa"></div>
         </li>
         <li>
           <div class="label">Extra monthly payment</div>
-          <div class="input"><input id="e13" data-cookie="extra"></div>
+          <div class="input"><input id="extra" data-cookie="extra"></div>
         </li>
         <li>
           <div class="label">Yearly homeowners insurance</div>
-          <div class="input"><input id="e5" data-cookie="hoi"></div>
+          <div class="input"><input id="hoi" data-cookie="hoi"></div>
         </li>
         <li>
           <div class="label">Yearly flood insurance</div>
-          <div class="input"><input id="e6" data-cookie="flood"></div>
+          <div class="input"><input id="flood" data-cookie="flood"></div>
         </li>
         <li>
           <div class="label">Effective tax rate</div>
-          <div class="input"><input id="e14" data-cookie="tax"></div>
+          <div class="input"><input id="tax" data-cookie="tax"></div>
         </li>
         <li>
           <div class="label">Yearly appreciation rate</div>
-          <div class="input"><input id="e16" data-cookie="appreciation"></div>
+          <div class="input"><input id="appreciation" data-cookie="appreciation"></div>
         </li>
         <li>
           <div class="label">Monthly rent comparison</div>
-          <div class="input"><input id="e17" data-cookie="rent"></div>
+          <div class="input"><input id="rent" data-cookie="rent"></div>
         </li>
         <li>
           <div class="label">Loan amount</div>
@@ -153,52 +149,35 @@
       <h1>Realistic Mortgage Calculator</h1>
       <ul id="locations" class="locations">
         <li data-cookie="location" data-value="custom">
-          <div class="avatar custom"></div>
+          <img class="avatar" src="img/custom.png" alt="yellow front door of a brick house">
           <div class="label">Custom</div>
         </li>
         <li data-cookie="location" data-value="atlanta">
-          <div class="avatar atlanta"></div>
+          <img class="avatar" src="img/atlanta.png" alt="atlanta skyline">
           <div class="label">Atlanta</div>
         </li>
         <li data-cookie="location" data-value="chicago">
-          <div class="avatar chicago"></div>
+          <img class="avatar" src="img/chicago.png"  alt="chicago skyline and willis tower">
           <div class="label">Chicago</div>
         </li>
         <li data-cookie="location" data-value="san_francisco">
-          <div class="avatar san-francisco"></div>
+          <img class="avatar" src="img/san-francisco.png" alt="san francisco golden gate bridge">
           <div class="label">San Francisco</div>
         </li>
         <li data-cookie="location" data-value="seattle">
-          <div class="avatar seattle"></div>
+          <img class="avatar" src="img/seattle.png" alt="seattle skyline and space needle">
           <div class="label">Seattle</div>
         </li>
-        <!--<li data-cookie="location" data-value="">
-          <div class="avatar more"></div>
-          <div class="label">more</div>
-        </li>-->
       </ul>
       <section class="insight">
-        With
-        <span class="input">$<input id="e4z" data-cookie="upfront"></span>
-        paid at closing, a
-        <span class="input">$<input id="e1z" data-cookie="price"></span>
-        home costs about
-        <span class="input disabled">$<input id="u94z" disabled></span>
-        per month for
-        <span class="input disabled"><input id="u96z" disabled></span>
-        years
+        With <span class="input">$<input id="e4z" data-cookie="upfront"></span> paid at closing,
+        a <span class="input">$<input id="e1z" data-cookie="price"></span> home costs
+        about <span class="input disabled">$<input id="u94z" disabled></span> per month
+        for <span class="input disabled"><input id="u96z" disabled></span> years
         <div class="details">
           <span id="btn-details" class="button noselect">Details</span>
         </div>
       </section>
-      <!--<div class="visualization">
-        <div id="sparkline" class="sparkline"></div>
-        <div id="sparkline_dates" class="sparkline_dates"></div>
-      </div>
-      <div class="checkboxes">
-        <div class="input"><input type="checkbox" id="cb-balance" checked> Loan balance</div>
-        <div class="input"><input type="checkbox" id="cb-payments_t" checked> Total payments</div>
-      </div>-->
       <footer class="legal">
         <a target="_blank" href="https://www.binaryaffection.com/">&copy; 2017 Binary Affection</a> &middot;
         <a target="_blank" href="https://www.binaryaffection.com/projects/realisticmortgage/privacypolicy/">Privacy policy</a> &middot;
