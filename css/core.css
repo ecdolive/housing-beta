@@ -90,21 +90,51 @@ th {
     box-shadow: 0 3px 12px rgba(0,0,0,.15);
     /*color: rgb(255,255,255)*/
   }
-.legal {
-  bottom: 0;
-  color: rgba(66,74,80,.4);
-  font-size: 12px;
-  padding: 0 8px 8px 0;
-  position: fixed;
-  right: 0;
+.footer {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
 }
-  .legal > a {
+  .footer > .share {
+    display: flex;
+    flex: 1;
+    margin: 0 auto 16px;
+    text-align: center;
+  }
+    .footer > .share > li {
+      color: rgba(66,74,80,.6);
+      line-height: 24px;
+      margin-right: 32px;
+      text-transform: uppercase;
+    }
+    .footer > .share > li:last-of-type {
+      margin-right: 0;
+    }
+      .footer > .share > li > a > img {
+        display: block;
+        -webkit-filter: brightness(100%) contrast(100%) opacity(30%) saturate(0%);
+        filter: brightness(100%) contrast(100%) opacity(30%) saturate(0%);
+        height: 24px;
+        transition: filter .3s;
+      }
+      .footer > .share > li > a:hover > img {
+        -webkit-filter: none;
+        filter: none;
+      }
+  .footer > .legal {
     color: rgba(66,74,80,.4);
-    text-decoration: none;
+    flex: 1;
+    font-size: 12px;
+    padding: 0 8px 8px 0;
+    text-align: right;
   }
-  .legal > a:hover {
-    color: rgba(66,74,80,.8);
-  }
+    .footer > .legal > a {
+      color: rgba(66,74,80,.4);
+      text-decoration: none;
+    }
+    .footer > .legal > a:hover {
+      color: rgba(66,74,80,.8);
+    }
 
 .menu {
   background-color: #fff;
