@@ -96,6 +96,7 @@ th {
   width: 100vw;
 }
   .footer > .share {
+    align-self: center;
     display: flex;
     flex: 1;
     margin: 0 auto 16px;
