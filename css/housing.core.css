@@ -203,6 +203,9 @@ body.menu-closed > .menu {
         justify-content: flex-end;
         margin-left: 16px;
       }
+        .menu > ul > li.hidden {
+          display: none;
+        }
         .menu > ul > li > .input {
           border-left: 1px solid rgba(0,0,0,.08);
           display: flex;
