@@ -1,2 +1,5 @@
 User-agent: *
-Disallow: /
+Disallow: /lib
+Disallow: /marketing
+Disallow: /notes.txt
+Disallow: /CNAME
