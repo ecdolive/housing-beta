@@ -309,10 +309,13 @@ body.menu-closed > .menu {
     z-index: 9;
   }
   .main > h1 {
-    font-family: 'Elsie', cursive;
-    font-size: 24px;
-    line-height: 52px;
+    line-height: 0;
+    margin: 8px 0;
   }
+    .main > h1 > a > img {
+      display: block;
+      height: 32px;
+    }
   .main > .locations {
     display: flex;
     /*flex: 1;*/
@@ -475,10 +478,11 @@ and (max-width : 859px) {
     margin-left: auto;
   }
     .main > h1 {
-      font-size: 18px;
-      line-height: 36px;
-      margin: 8px;
+      margin: 12px 0;
     }
+      .main > h1 > a > img {
+        height: 24px;
+      }
     .main > .locations > li {
       min-width: 90px;
     }
