@@ -20,8 +20,22 @@
     <link rel="canonical" href="http://realisticmortgage.com">
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
-    <link href="css/min.css" rel="stylesheet">
-    <script src="lib/min.js"></script>
+    <!--<link href="css/min.css" rel="stylesheet">-->
+      <link href="css/meyer.reset.css" rel="stylesheet">
+      <link href="css/housing.core.css" rel="stylesheet">
+    <!--<script src="lib/min.js"></script>-->
+      <script src="lib/jquery-3.2.1.min.js"></script>
+      <script src="lib/js.cookie.min.js"></script>
+      <!-- remove lib/housing.api.js -->
+      <script src="lib/housing.calculate.js"></script>
+      <script src="lib/housing.core.js"></script>
+      <script src="lib/housing.locations.js"></script>
+      <script src="lib/housing.init.js"></script>
+    <!-- remove lib/jquery.sparkline.min.js -->
+    <script src="lib/housing.chart.js"></script>
+    <script src="lib/housing.amoritization.js"></script>
+    <!-- remove lib/jquery.number.min.js -->
+    <!-- <script src="lib/autonumeric.min.js"></script> -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -31,125 +45,8 @@
       ga('send', 'pageview');
     </script>
   </head>
-  <body class="menu-closed">
-    <div id="btn-open" class="btn-open"></div>
-    <section id="menu" class="menu">
-      <header>
-        <div class="title">Cost details</div>
-        <div id="btn-close" class="btn-close"></div>
-      </header>
-      <ul>
-        <li class="hidden">
-          <div class="label">Purchase date</div>
-          <div class="input date">
-            <select id="month" data-cookie="month"></select>
-            <select id="year" data-cookie="year"></select>
-          </div>
-        </li>
-        <li>
-          <div class="label">Home purchase price</div>
-          <div class="input"><input id="price" data-cookie="price"></div>
-        </li>
-        <li>
-          <div class="label">Total upfront costs (<span id="upfront_opposite"></span>)</div>
-          <div class="input"><input id="upfront" data-cookie="upfront"></div>
-        </li>
-        <li>
-          <div class="label sub">Closing costs (<span id="closing_opposite"></span>)</div>
-          <div class="input"><input id="closing" data-cookie="closing"></div>
-        </li>
-        <li>
-          <div class="label sub">Down payment (<span id="down_opposite"></span>)</div>
-          <div class="input"><input id="down" data-cookie="down"></div>
-        </li>
-        <li>
-          <div class="label">Loan term</div>
-          <div class="input"><input id="term" data-cookie="term"></div>
-        </li>
-        <li>
-          <div class="label">Yearly interest rate</div>
-          <div class="input"><input id="interest" data-cookie="interest"></div>
-        </li>
-        <li>
-          <div class="label">Yearly PMI rate</div>
-          <div class="input"><input id="pmi" data-cookie="pmi"></div>
-        </li>
-        <li>
-          <div class="label">Monthly HOA dues</div>
-          <div class="input"><input id="hoa" data-cookie="hoa"></div>
-        </li>
-        <li>
-          <div class="label">Extra monthly payment</div>
-          <div class="input"><input id="extra" data-cookie="extra"></div>
-        </li>
-        <li>
-          <div class="label">Yearly homeowners insurance</div>
-          <div class="input"><input id="hoi" data-cookie="hoi"></div>
-        </li>
-        <li>
-          <div class="label">Yearly flood insurance</div>
-          <div class="input"><input id="flood" data-cookie="flood"></div>
-        </li>
-        <li>
-          <div class="label">Effective tax rate</div>
-          <div class="input"><input id="tax" data-cookie="tax"></div>
-        </li>
-        <li class="hidden">
-          <div class="label">Yearly appreciation rate</div>
-          <div class="input"><input id="appreciation" data-cookie="appreciation"></div>
-        </li>
-        <li class="hidden">
-          <div class="label">Monthly rent comparison</div>
-          <div class="input"><input id="rent" data-cookie="rent"></div>
-        </li>
-        <li>
-          <div class="label">Loan amount</div>
-          <div class="input disabled"><input id="u0" disabled></div>
-        </li>
-        <li>
-          <div class="label">Monthly mortgage insurance</div>
-          <div class="input disabled"><input id="u11m" disabled></div>
-        </li>
-        <li>
-          <div class="label">Monthly principal &amp; interest</div>
-          <div class="input disabled"><input id="u91" disabled></div>
-        </li>
-        <li>
-          <div class="label">Monthly taxes, insurance, dues</div>
-          <div class="input disabled"><input id="u92" disabled></div>
-        </li>
-        <li>
-          <div class="label">Total monthly payments</div>
-          <div class="input disabled"><input id="u94a" disabled></div>
-        </li>
-        <li>
-          <div class="label">Monthly mortgage payment</div>
-          <div class="input disabled"><input id="u93" disabled></div>
-        </li>
-        <li>
-          <div class="label">Years to pay off</div>
-          <div class="input disabled"><input id="u96a" disabled></div>
-        </li>
-        <li>
-          <div class="label">Number of payments</div>
-          <div class="input disabled"><input id="u95" disabled></div>
-        </li>
-        <li>
-          <div class="label">Total mortgage payments</div>
-          <div class="input disabled"><input id="u97" disabled></div>
-        </li>
-        <li>
-          <div class="label">Total interest</div>
-          <div class="input disabled"><input id="u98" disabled></div>
-        </li>
-        <li>
-          <div class="label">Yearly rent</div>
-          <div class="input disabled"><input id="u17" disabled></div>
-        </li>
-      </ul>
-    </section>
-    <main id="main" class="main">
-      <div id="tint" class="tint"></div>
+  <body>
+    <div class="top-bar">
       <h1>
         <a href="/">
           <img src="img/lockup-realistic-mortgage.svg" alt="Realistic Mortgage | Simple Monthly Payments Calculator">
@@ -177,24 +74,341 @@
           <div class="label">Seattle</div>
         </li>
       </ul>
-      <section class="insight">
-        With <span class="input">$<input id="e4z" data-cookie="upfront"></span> paid at closing,
-        a <span class="input">$<input id="e1z" data-cookie="price"></span> home costs
-        about <span class="input disabled">$<input id="u94z" disabled></span> per month
-        for <span class="input disabled"><input id="u96z" disabled></span> years
-        <div class="details">
-          <span id="btn-details" class="button noselect">Edit Details</span>
+    </div>
+    <main class="main">
+      <section class="card mortgage">
+        <div class="content">
+          <div class="title">Your <span data-output="location-name"></span> mortgage</div>
+          <div class="item">
+            <span class="value" data-output="u94z" data-format="currency"></span>
+            <span class="per">/month</span>
+          </div>
+          <div class="item">
+            <span class="value" data-output="u96z"></span>
+            <span class="per">years</span>
+          </div>
+        </div>
+      </section>
+      <section class="card edit">
+        <header>Edit Details</header>
+        <div class="menu">
+          <!-- <div class="card-title">Edit Details</div> -->
+          <ul>
+            <li class="hidden">
+              <div class="label">Purchase date</div>
+              <div class="input date">
+                <select id="month" data-cookie="month"></select>
+                <select id="year" data-cookie="year"></select>
+              </div>
+            </li>
+            <li>
+              <div class="label">Purchase price</div>
+              <div class="input sheen">
+                <input id="price" data-cookie="price">
+              </div>
+            </li>
+            <li class="set-top">
+              <div class="label sub">Down payment</div>
+              <div class="input">
+                <input id="down" data-cookie="down">
+                <span id="down_opposite"></span>
+              </div>
+            </li>
+            <li class="set-middle">
+              <div class="label sub">Closing costs</div>
+              <div class="input">
+                <input id="closing" data-cookie="closing">
+                <span id="closing_opposite"></span>
+              </div>
+            </li>
+            <li class="set-bottom">
+              <div class="label">Total upfront costs</div>
+              <div class="input">
+                <input id="upfront" data-cookie="upfront">
+                <span id="upfront_opposite"></span>
+              </div>
+            </li>
+            <li>
+              <div class="label">PMI</div>
+              <div class="input">
+                <input id="pmi" data-cookie="pmi">
+                <span>/year</span>
+              </div>
+            </li>
+            <li class="set-top">
+              <div class="label">Interest rate</div>
+              <div class="input">
+                <input id="interest" data-cookie="interest">
+                <span>/year</span>
+              </div>
+            </li>
+            <li class="set-bottom">
+              <div class="label">Loan term</div>
+              <div class="input">
+                <input id="term" data-cookie="term">
+                <span>years</span>
+              </div>
+            </li>
+            <li>
+              <div class="label">Tax rate</div>
+              <div class="input">
+                <img class="avatar" src="" alt="city image" data-output="location-image">
+                <input id="tax" data-cookie="tax">
+                <span>/year</span>
+              </div>
+            </li>
+            <li class="set-top">
+              <div class="label">Homeowner's insurance</div>
+              <div class="input">
+                <input id="hoi" data-cookie="hoi">
+                <span>/year</span>
+              </div>
+            </li>
+            <li class="set-bottom">
+              <div class="label">Flood insurance</div>
+              <div class="input">
+                <input id="flood" data-cookie="flood">
+                <span>/year</span>
+              </div>
+            </li>
+            <li>
+              <div class="label">HOA</div>
+              <div class="input">
+                <input id="hoa" data-cookie="hoa">
+                <span>/month</span>
+              </div>
+            </li>
+            <li>
+              <div class="label">Extra principle payment</div>
+              <div class="input">
+                <input id="extra" data-cookie="extra">
+                <span>/month</span>
+              </div>
+            </li>
+            <li>
+              <div class="label">Yearly appreciation rate</div>
+              <div class="input"><input id="appreciation" data-cookie="appreciation"></div>
+            </li>
+            <li class="hidden">
+              <div class="label">Monthly rent comparison</div>
+              <div class="input"><input id="rent" data-cookie="rent"></div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="card tabbed totals">
+        <header>Totals</header>
+        <ul class="card-tabs noselect">
+          <li data-tab="monthly" class="selected">Monthly</li>
+          <li data-tab="lifetime">Lifetime</li>
+        </ul>
+        <div id="monthly" class="tab visible">
+          <div class="row header">
+            <div class="label">Average total cost</div>
+            <div class="output">
+              <span id="u94a" data-format="currency"></span>
+              <span>/month</span>
+            </div>
+          </div>
+          <details>
+            <summary class="row noselect">
+              <div class="label">Principle &amp; interest</div>
+              <div class="output">
+                <span id="u93" data-format="currency"></span>
+                <span>/month</span>
+              </div>
+            </summary>
+            <div class="row sub">
+              <div class="label">Principle</div>
+              <div class="output">
+                <span id="u90" data-format="currency"></span>
+                <span>/month</span>
+              </div>
+            </div>
+            <div class="row sub">
+              <div class="label">Interest</div>
+              <div class="output">
+                <span id="u89" data-format="currency"></span>
+                <span>/month</span>
+              </div>
+            </div>
+          </details>
+          <div class="row">
+            <div class="label">Taxes</div>
+            <div class="output">
+              <span id="u92" data-format="currency"></span>
+              <span>/month</span>
+            </div>
+          </div>
+          <details>
+            <summary class="row noselect">
+              <div class="label">Insurance</div>
+              <div class="output">
+                <span id="u99" data-format="currency"></span>
+                <span>/month</span>
+              </div>
+            </summary>
+            <div class="row sub">
+              <div class="label">PMI</div>
+              <div class="output">
+                <span id="u11m" data-format="currency"></span>
+                <span>/month</span>
+              </div>
+            </div>
+            <div class="row sub">
+              <div class="label">Home insurance</div>
+              <div class="output">
+                <span id="u12" data-format="currency"></span>
+                <span>/month</span>
+              </div>
+            </div>
+            <div class="row sub">
+              <div class="label">Flood insurance</div>
+              <div class="output">
+                <span id="u13" data-format="currency"></span>
+                <span>/month</span>
+              </div>
+            </div>
+          </details>
+          <div class="row">
+            <div class="label">Dues</div>
+            <div class="output">
+              <span id="u91" data-format="currency"></span>
+              <span>/month</span>
+            </div>
+          </div>
+          <div class="hidden">
+            <div class="label">Yearly rent</div>
+            <div class="output">
+              <span id="u17"></span>
+              <span>/month</span>
+            </div>
+          </div>
+        </div>
+        <div id="lifetime" class="tab">
+          <div  class="row header">
+            <div class="label">Total cost</div>
+            <div class="output">
+              <span id="u79" data-format="currency"></span>
+              <span></span>
+            </div>
+          </div>
+          <details>
+            <summary class="row noselect">
+              <div class="label">Principle &amp; interest</div>
+              <div class="output">
+                <span id="u97" data-format="currency"></span>
+                <span></span>
+              </div>
+            </summary>
+            <div class="row sub">
+              <div class="label">Principle (Loan amount)</div>
+              <div class="output">
+                <span id="u0" data-format="currency"></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="row sub">
+              <div class="label">Interest</div>
+              <div class="output">
+                <span id="u98" data-format="currency"></span>
+                <span></span>
+              </div>
+            </div>
+          </details>
+          <div class="row">
+            <div class="label">Taxes</div>
+            <div class="output">
+              <span id="u88" data-format="currency"></span>
+              <span></span>
+            </div>
+          </div>
+          <details>
+            <summary class="row noselect">
+              <div class="label">Insurance</div>
+              <div class="output">
+                <span id="u84" data-format="currency"></span>
+                <span></span>
+              </div>
+            </summary>
+            <div class="row sub">
+              <div class="label">PMI</div>
+              <div class="output">
+                <span id="u87" data-format="currency"></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="row sub">
+              <div class="label">Home insurance</div>
+              <div class="output">
+                <span id="u86" data-format="currency"></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="row sub">
+              <div class="label">Flood insurance</div>
+              <div class="output">
+                <span id="u85" data-format="currency"></span>
+                <span></span>
+              </div>
+            </div>
+          </details>
+          <div class="row">
+            <div class="label">Dues</div>
+            <div class="output">
+              <span id="u83" data-format="currency"></span>
+              <span></span>
+            </div>
+          </div>
+          <details>
+            <summary class="row noselect">
+              <div class="label">Upfront payments</div>
+              <div class="output">
+                <span id="u80" data-format="currency"></span>
+                <span></span>
+              </div>
+            </summary>
+            <div class="row sub">
+              <div class="label">Down payment</div>
+              <div class="output">
+                <span id="u82" data-format="currency"></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="row sub">
+              <div class="label">Closing costs</div>
+              <div class="output">
+                <span id="u81" data-format="currency"></span>
+                <span></span>
+              </div>
+            </div>
+          </details>
+          <div class="hidden">
+            <div class="label">Years to pay off</div>
+            <div class="output">
+              <span id="u96a"></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="hidden">
+            <div class="label">Number of payments</div>
+            <div class="output">
+              <span id="u95"></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="card amoritization">
+        <div id="tab-value" class="tab chart-wrapper visible">
+          <div id="chart-value" class="chart"></div>
         </div>
       </section>
       <footer class="footer">
         <ul class="share" id="share">
           <li>Share</li>
-          <li>
-            <a data-share="facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?app_id=113869198637480&kid_directed_site=0&sdk=joey&u=http%3A%2F%2Frealisticmortgage.com%2F&display=popup&ref=plugin&src=share_button"><img src="img/logo-fb.svg"></a>
-          </li>
-          <li>
-            <a data-share="twitter" target="_blank" href="https://twitter.com/intent/tweet?status=This%20site%20tells%20you%20the%20true%20monthly%20payments%20for%20that%20home%20you%27re%20looking%20to%20buy.%20http%3A%2F%2Frealisticmortgage.com%20%23mortgage%20%23househunting"><img src="img/logo-twitter.svg"></a>
-          </li>
+          <li><a data-share="facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?app_id=113869198637480&kid_directed_site=0&sdk=joey&u=http%3A%2F%2Frealisticmortgage.com%2F&display=popup&ref=plugin&src=share_button"><img src="img/logo-fb.svg"></a></li>
+          <li><a data-share="twitter" target="_blank" href="https://twitter.com/intent/tweet?status=This%20site%20tells%20you%20the%20true%20monthly%20payments%20for%20that%20home%20you%27re%20looking%20to%20buy.%20http%3A%2F%2Frealisticmortgage.com%20%23mortgage%20%23househunting"><img src="img/logo-twitter.svg"></a></li>
         </ul>
         <div class="legal">
           <a target="_blank" href="https://www.binaryaffection.com/">&copy; 2017 Binary Affection</a> &middot;
@@ -203,5 +417,21 @@
         </div>
       </footer>
     </main>
+    <section class="floater">
+        <div>
+          <div class="title">Your <span data-output="location-name"></span> mortgage</div>
+          <ul>
+            <li>
+              <span class="value" data-output="u94z"></span>
+              <span class="per">/month</span>
+            </li>
+            <li>
+              <span class="value" data-output="u96z"></span>
+              <span class="per">years</span>
+            </li>
+          </ul>
+      </div>
+    </section>
+
   </body>
 </html>
