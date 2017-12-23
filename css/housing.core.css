@@ -237,25 +237,12 @@ th {
         padding: 24px 0 16px;
       }
         .card.totals > .tab .row {
-            /*-webkit-box-align: center;
-            -ms-flex-align: center;*/
           align-items: center;
           border-bottom: 1px solid rgba(0,0,0,.04);
-            display: -webkit-box;
-            /*display: -ms-flexbox;*/
-            display: -webkit-flex;
           display: flex;
-            /*-webkit-box-flex: 1;
-            -ms-flex: 1;*/
           flex: 1;
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: normal;
-            /*-ms-flex-direction: row;*/
           flex-direction: row;
-            /*-ms-flex-wrap: nowrap;*/
           flex-wrap: nowrap;
-            -webkit-box-pack: end;
-            /*-ms-flex-pack: end;*/
           justify-content: flex-end;
           padding: 8px 16px 8px 32px;
         }
@@ -312,7 +299,7 @@ th {
                 /*color: rgba(0,0,0,.2);*/
                 display: none;
               }
-                  .card.totals > .tab > details > summary:before {
+                  .card.totals > .tab > details > summary > div:before {
                     color: #F00563;
                     color: #0088cc;
                     content: '+';
@@ -320,10 +307,10 @@ th {
                     text-align: center;
                     width: 16px;
                   }
-                  .card.totals > .tab > details[open] > summary:before {
+                  .card.totals > .tab > details[open] > summary > div:before {
                     content: '-';
                   }
-              .card.totals > .tab > details[open] > summary {
+              .card.totals > .tab > details[open] > summary > div {
                 border-bottom: none;
                 /*margin-bottom: 1px;*/
               }
