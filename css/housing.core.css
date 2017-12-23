@@ -243,6 +243,7 @@ th {
           border-bottom: 1px solid rgba(0,0,0,.04);
             display: -webkit-box;
             /*display: -ms-flexbox;*/
+            display: -webkit-flex;
           display: flex;
             /*-webkit-box-flex: 1;
             -ms-flex: 1;*/
