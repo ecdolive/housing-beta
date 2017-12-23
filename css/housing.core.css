@@ -237,14 +237,25 @@ th {
         padding: 24px 0 16px;
       }
         .card.totals > .tab .row {
+            /*-webkit-box-align: center;
+            -ms-flex-align: center;*/
           align-items: center;
-            border-bottom: 1px solid rgba(0,0,0,.04);
+          border-bottom: 1px solid rgba(0,0,0,.04);
+            display: -webkit-box;
+            /*display: -ms-flexbox;*/
           display: flex;
+            /*-webkit-box-flex: 1;
+            -ms-flex: 1;*/
           flex: 1;
+            /*-webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;*/
           flex-direction: row;
+            /*-ms-flex-wrap: nowrap;*/
           flex-wrap: nowrap;
+            /*-webkit-box-pack: end;
+            -ms-flex-pack: end;*/
           justify-content: flex-end;
-          /*margin: 0 16px 8px;*/
           padding: 8px 16px 8px 32px;
         }
           .card.totals > .tab > .hidden {
