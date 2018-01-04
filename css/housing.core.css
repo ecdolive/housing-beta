@@ -140,6 +140,16 @@ th {
       color: rgba(255,255,255,.8);
       font-size: 18px;
     }
+  .card.amoritization > .menu {
+    /*border-top: 1px solid rgba(0,0,0,.1);*/
+    margin-top: 8px;
+  }
+    .card.amoritization > .menu > ul {
+      padding: 16px;
+    }
+      .card.amoritization > .menu > ul > li {
+        margin: 0;
+      }
   .card .tab {
     display: none;
   }
@@ -801,38 +811,6 @@ th {
       margin: 0 12px 0 16px;
       visibility: hidden;
     }
-
-.sparkline {
-  margin: 10px auto;
-  position: relative;
-}
-.sparkline_dates {
-  align-items: flex-start;
-  border-top: 1px solid rgba(0,0,0,.1);
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  padding: 10px 0;
-}
-  .sparkline_dates > div {
-    flex: 1;
-    font-size: 11px;
-    overflow: overlay;
-    text-align: center;
-  }
-  .sparkline_dates > div:nth-of-type(even) {
-    color: transparent;
-  }
-/*.tooltip {
-  background-color: rgba(255,255,255,.7);
-  color: #000;
-  padding: 10px;
-  position: absolute;
-}
-.tooltip > .jqsfield {
-  color: inherit;
-  font-size: 14px;
-}*/
 .prompt {
   align-items: center;
   background-color: rgba(0,0,0,.5);
@@ -928,13 +906,6 @@ and (min-width : 480px) {
       .main > .card.mortgage > .content {
         top: auto;
       }
-  /* vizualization */
-  .sparkline_dates > div {
-    overflow: auto;
-  }
-  .sparkline_dates > div:nth-of-type(even) {
-    color: auto;
-  }
 }
 
 /* Large width (desktop) */
