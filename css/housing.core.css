@@ -489,10 +489,12 @@ th {
     }
       .footer > .share > li > a > img {
         display: block;
-        -webkit-filter: brightness(100%) contrast(100%) opacity(30%) saturate(0%);
-        filter: brightness(100%) contrast(100%) opacity(30%) saturate(0%);
         height: 24px;
         transition: filter .3s;
+      }
+      .footer > .share:hover > li > a > img {
+        -webkit-filter: brightness(100%) contrast(100%) opacity(30%) saturate(0%);*/
+        filter: brightness(100%) contrast(100%) opacity(30%) saturate(0%);
       }
       .footer > .share > li > a:hover > img {
         -webkit-filter: none;
@@ -957,7 +959,7 @@ and (min-width : 860px) {
   .footer > .legal {
     justify-content: center;
     margin-left: 352px;
-    width: 360px;
+    /*width: 360px;*/
   }
   .menu {
     /*margin: 130px 0 0 0;*/
@@ -998,6 +1000,6 @@ and (min-width : 1064px) {
   .footer > .share,
   .footer > .legal {
     margin-left: auto;
-    width: 360px;
+    /*width: 360px;*/
   }
 }
