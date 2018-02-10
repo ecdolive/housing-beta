@@ -9,10 +9,10 @@ body, input, select {
   font-weight: 400;
 }
 body {
-  /*background-color: #049DCA;*/
-  background-color: #FCFCFC;
+  /*background: #049DCA;*/
+  background: #FCFCFC;
   margin: 0;
-  transition: background-color .3s;
+  transition: background .3s;
 }
 a {
   text-decoration: none;
@@ -28,7 +28,7 @@ details > summary {
   transition: all .3s;
 }
   details > summary:hover {
-    background-color: #fafafa;
+    background: #fafafa;
   }
   details[open] > summary {
     background: linear-gradient(to bottom, rgba(250,250,250,1) 0%,rgba(250,250,250,0) 100%) 0 -32px no-repeat;
@@ -47,13 +47,13 @@ tbody > tr {
   color: rgba(0,0,0,.6);
 }
 tbody > tr:nth-of-type(odd) {
-  background-color: rgba(0,0,0,.04);
+  background: rgba(0,0,0,.04);
   color: rgba(0,0,0,.8);
 }
 tbody > tr:hover, tbody > tr:nth-of-type(odd):hover {
-  background-color: rgba(0,0,0,.08);
+  background: rgba(0,0,0,.08);
   color: rgb(0,0,0);
-  background-color: rgba(0,0,0,.8);
+  background: rgba(0,0,0,.8);
   color: rgb(255,255,255);
 }
 th, td {
@@ -77,7 +77,7 @@ th {
   user-select: none;
 }
 .button {
-  background-color: rgba(255,255,255,1);
+  background: rgba(255,255,255,1);
   border-radius: 4px;
   box-shadow: 0 0 0 1px rgba(0,0,0,.1);
   color: rgb(0,136,204);
@@ -86,16 +86,16 @@ th {
   font-weight: 600;
   padding: 8px 16px;
   text-transform: uppercase;
-  transition: background-color .3s, box-shadow .3s, color .3s;
+  transition: background .3s, box-shadow .3s, color .3s;
 }
   .button:hover {
-    background-color: #fff;
+    background: #fff;
     box-shadow: 0 3px 12px rgba(0,0,0,.15);
     /*color: rgb(255,255,255)*/
   }
 
 .card {
-  background-color: #fff;
+  background: #fff;
   border-radius: 10px;
   /*box-shadow: 0 1px 4px rgba(0,0,0,.1);*/
   box-shadow: 0 1px 4px rgba(0,0,0,.1), 0 0 24px rgba(0,0,0,.06);
@@ -106,7 +106,11 @@ th {
   z-index: 2;
 }
   .card.mortgage {
-    background-color: #049DCA;
+      background: #049DCA;
+      background: -moz-linear-gradient(top, #0389bf 0%, #04b0d4 100%); /* FF3.6-15 */
+      background: url(../img/skyline.svg) 0 100%/contain no-repeat, -webkit-linear-gradient(top, #0389bf 0%,#04b0d4 100%); /* Chrome10-25,Safari5.1-6 */
+      background: url(../img/skyline.svg) 0 100%/contain no-repeat, linear-gradient(to bottom, #0389bf 0%,#04b0d4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0389bf', endColorstr='#04b0d4',GradientType=0 ); /* IE6-9 */
     border-radius: 0;
     bottom: 0;
     box-shadow: none;
@@ -207,7 +211,7 @@ th {
       display: block;
     }
   /*.card.totals > header {
-    background-color: #fafafa;
+    background: #fafafa;
     border-radius: 10px 10px 0 0;
     padding: 16px 16px 12px;
     font-size: 18px;
@@ -300,20 +304,20 @@ th {
       padding: 8px 12px;
       text-align: right;
       text-transform: uppercase;
-      transition: background-color .1s, color .1s;
+      transition: background .1s, color .1s;
     }
     .card > .head > .action:last-of-type {
       margin-right: 16px;
     }
       .card > .head > .action:hover {
-        background-color: rgba(0,0,0,.04);
+        background: rgba(0,0,0,.04);
       }
     .card.tabbed > .head {
-      background-color: #fafafa;
+      background: #fafafa;
       margin-bottom: 0;
     }
       /*.card.totals > header {
-        background-color: #fafafa;
+        background: #fafafa;
         border-radius: 10px 10px 0 0;
         padding: 16px 16px 12px;
         font-size: 18px;
@@ -405,7 +409,7 @@ th {
           }
       /**/
   .card .card-tabs {
-    background-color: #fafafa;
+    background: #fafafa;
     border-bottom: 1px solid rgba(0,0,0,.1);
     border-radius: 10px 10px 0 0;
     display: flex;
@@ -420,14 +424,14 @@ th {
       padding: 16px 8px 12px;
       text-align: center;
       text-transform: uppercase;
-      transition: background-color .1s, color .1s;
+      transition: background .1s, color .1s;
     }
       .card .card-tabs > li:hover {
-        /*background-color: rgba(0,0,0,.03);*/
+        /*background: rgba(0,0,0,.03);*/
         color: rgba(0,0,0,.5);
       }
       .card .card-tabs > li.selected {
-        /*background-color: transparent;*/
+        /*background: transparent;*/
         border-bottom: 4px solid #F00563;
         color: #F00563;
         cursor: default;
@@ -454,7 +458,7 @@ th {
 }
 
 .floater {
-  background-color: transparent;
+  background: transparent;
   opacity: 0;
   overflow: auto;
   position: fixed;
@@ -469,7 +473,7 @@ th {
     top: 82px;
   }
   /*.floater > div {
-    background-color: #049DCA;
+    background: #049DCA;
     border-radius: 10px;
     bottom: 0;
     box-shadow: 0 1px 4px rgba(0,0,0,.1);
@@ -479,12 +483,16 @@ th {
     width: 360px;
   }*/
       .floater {
-        /*background-color: #ffffff;*/
-        background-color: #049DCA;
+        /*background: #ffffff;*/
+          background: #049DCA;
+          background: -moz-linear-gradient(top, #0389bf 0%, #04b0d4 100%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(top, #0389bf 0%,#04b0d4 100%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to bottom, #0389bf 0%,#04b0d4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0389bf', endColorstr='#04b0d4',GradientType=0 ); /* IE6-9 */
         box-shadow: 0 1px 4px rgba(0,0,0,.1), 0 0 16px rgba(0,0,0,.1);
       }
       .floater > div {
-        background-color: transparent;
+        background: transparent;
         border-radius: 10px;
         bottom: 0;
         /*color: rgba(0,0,0,.8);*/
@@ -582,7 +590,7 @@ th {
           border-top-right-radius: 0;
         }
       .menu > ul > li > .input {
-        background-color: rgba(0,0,0,.02);
+        background: rgba(0,0,0,.02);
         border: 1px solid rgba(0,0,0,.08);
         border-radius: 24px;
         color: rgba(0,0,0,.3);
@@ -593,7 +601,7 @@ th {
         width: 160px;
       }
         .menu > ul > li > .input.sheen {
-          background-color: transparent;
+          background: transparent;
         }
         .menu > ul > li > .input.sheen:before {
           animation: sheen 3s ease 2s infinite;
@@ -646,7 +654,7 @@ th {
         color: #0088cc;
       }
         .menu > ul > li > .input > input {
-          background-color: transparent;
+          background: transparent;
           border: 0;
           border-radius: 24px;
           color: #0088cc;
@@ -661,14 +669,14 @@ th {
         }
           .menu > ul > li > .input > input:hover,
           .menu > ul > li > .input > input:focus {
-            background-color: rgba(0,0,0,.03);
+            background: rgba(0,0,0,.03);
           }
         .menu > ul > li > .input > input[type='checkbox'] {
           margin: 0;
           width: auto;
         }
         .menu > ul > li > .input > input:disabled {
-          background-color: transparent;
+          background: transparent;
           border: 1px solid rgba(0,0,0,0);
           color: rgba(0,0,0,.5);
           font-weight: inherit;
@@ -714,7 +722,7 @@ th {
         }
 
 .top-bar {
-  background-color: #fff;
+  background: #fff;
   /*box-shadow: 0 0 8px rgba(0,0,0,.06);*/
   box-shadow: 0 0 16px rgba(0,0,0,.1);
   display: flex;
@@ -836,7 +844,7 @@ th {
     }
 .prompt {
   align-items: center;
-  background-color: rgba(0,0,0,.5);
+  background: rgba(0,0,0,.5);
   display: flex;
   height: 100vh;
   position: fixed;
@@ -845,7 +853,7 @@ th {
   z-index: 11;
 }
   .prompt > .box {
-    background-color: #fff;
+    background: #fff;
     border-radius: 10px;
     margin: 0 auto;
     width: 360px;
@@ -897,14 +905,18 @@ and (max-width : 359px) {
 @media only screen
 and (min-width : 480px) {
   body {
-    background-color: #fcfcfc;
+    background: #fcfcfc;
   }
       .floater {
-        background-color: transparent;
+        background: transparent;
         box-shadow: none;
       }
       .floater > div {
-        background-color: #049DCA;
+          background: #049DCA;
+          background: -moz-linear-gradient(top, #0389bf 0%, #04b0d4 100%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(top, #0389bf 0%,#04b0d4 100%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to bottom, #0389bf 0%,#04b0d4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0389bf', endColorstr='#04b0d4',GradientType=0 ); /* IE6-9 */
         box-shadow: 0 1px 4px rgba(0,0,0,.1);
         color: #ffffff;
         margin: 8px auto;
@@ -917,6 +929,11 @@ and (min-width : 480px) {
     top: auto;
   }
     .main > .card.mortgage {
+        background: #049DCA;
+        background: -moz-linear-gradient(top, #0389bf 0%, #04b0d4 100%); /* FF3.6-15 */
+        background: url(../img/skyline.svg) center -270%/cover no-repeat, -webkit-linear-gradient(top, #0389bf 0%,#04b0d4 100%); /* Chrome10-25,Safari5.1-6 */
+        background: url(../img/skyline.svg) center -270%/cover no-repeat, linear-gradient(to bottom, #0389bf 0%,#04b0d4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0389bf', endColorstr='#04b0d4',GradientType=0 ); /* IE6-9 */
       border-radius: 10px;
       bottom: auto;
       box-shadow: 0 1px 4px rgba(0,0,0,.1);
@@ -935,7 +952,7 @@ and (min-width : 480px) {
 @media only screen
 and (min-width : 860px) {
   body {
-    background-color: #fcfcfc;
+    background: #fcfcfc;
   }
   .main {
     top: auto;
@@ -950,7 +967,7 @@ and (min-width : 860px) {
         width: 360px;
       }
       .main > .card.edit {
-        background-color: transparent;
+        background: transparent;
         border-radius: 0;
         bottom: 0;
         box-shadow: none;
@@ -963,7 +980,7 @@ and (min-width : 860px) {
         z-index: 3;
       }
     .card.edit > .head > header {
-      background-color: transparent;
+      background: transparent;
       padding-left: 24px;
       /*border-radius: 10px 10px 0 0;
       padding: 16px 16px 12px;
