@@ -113,7 +113,7 @@ th {
     color: #fff;
     margin: 0;
     max-width: 100vw;
-    min-height: 300px;
+    /* min-height: 300px; */
     position: fixed;
     top: 0;
     z-index: 1;
@@ -125,15 +125,18 @@ th {
       top: 130px;
     }
     .card.mortgage .title {
-      font-size: 24px;
+      font-size: 18px;
       font-weight: 600;
       padding: 32px 24px;
     }
     .card.mortgage .item {
-      padding: 0 24px 40px;
+      padding: 0 24px 24px;
     }
+      .card.mortgage .item:last-of-type {
+        padding-bottom: 32px;
+      }
     .card.mortgage .value {
-      font-size: 40px;
+      font-size: 32px;
       font-weight: 600;
     }
     .card.mortgage .per {
@@ -150,6 +153,53 @@ th {
       .card.amoritization > .menu > ul > li {
         margin: 0;
       }
+  .card.share {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+  }
+    .card.share .title {
+      font-size: 18px;
+      font-weight: 600;
+      padding: 8px 16px;
+      text-align: center;
+    }
+    .card.share p {
+      padding: 0 16px 16px;
+      text-align: center;
+    }
+    .card.share > ul {
+      display: flex;
+      margin: 0 0 16px;
+    }
+      .card.share > ul > li {
+        color: rgba(0,0,0,.5);
+        flex: 1;
+        line-height: 24px;
+        text-transform: uppercase;
+      }
+      .card.share > ul > li:last-of-type {
+        margin-right: 0;
+      }
+        .card.share > ul > li > a {
+          display: flex;
+          padding: 12px 0;
+        }
+        .card.share > ul > li > a > img {
+          display: block;
+          flex: 1;
+          height: 24px;
+          transition: filter .3s;
+        }
+        .card.share > ul:hover > li > a > img {
+          -webkit-filter: brightness(100%) contrast(100%) opacity(30%) saturate(0%);*/
+          filter: brightness(100%) contrast(100%) opacity(30%) saturate(0%);
+        }
+        .card.share > ul > li > a:hover > img {
+          -webkit-filter: none;
+          filter: none;
+        }
   .card .tab {
     display: none;
   }
@@ -471,35 +521,6 @@ th {
   flex-direction: column;
   width: 100%;
 }
-  .footer > .share {
-    align-self: center;
-    display: flex;
-    flex: 1;
-    margin: 0 auto 16px;
-    text-align: center;
-  }
-    .footer > .share > li {
-      color: rgba(0,0,0,.5);
-      line-height: 24px;
-      margin-right: 32px;
-      text-transform: uppercase;
-    }
-    .footer > .share > li:last-of-type {
-      margin-right: 0;
-    }
-      .footer > .share > li > a > img {
-        display: block;
-        height: 24px;
-        transition: filter .3s;
-      }
-      .footer > .share:hover > li > a > img {
-        -webkit-filter: brightness(100%) contrast(100%) opacity(30%) saturate(0%);*/
-        filter: brightness(100%) contrast(100%) opacity(30%) saturate(0%);
-      }
-      .footer > .share > li > a:hover > img {
-        -webkit-filter: none;
-        filter: none;
-      }
   .footer > .legal {
     color: rgba(0,0,0,.3);
     flex: 1;
