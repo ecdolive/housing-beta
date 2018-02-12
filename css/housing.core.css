@@ -9,7 +9,6 @@ body, input, select {
   font-weight: 400;
 }
 body {
-  /*background: #049DCA;*/
   background: #FCFCFC;
   margin: 0;
   transition: background .3s;
@@ -44,9 +43,6 @@ details > summary > div:before {
 }
 details[open] > summary > div:before {
   content: '-';
-}
-table {
-  /*margin-top: 48px;*/
 }
 tbody > tr {
   color: rgba(0,0,0,.6);
@@ -96,13 +92,11 @@ th {
   .button:hover {
     background: #fff;
     box-shadow: 0 3px 12px rgba(0,0,0,.15);
-    /*color: rgb(255,255,255)*/
   }
 
 .card {
   background: #fff;
   border-radius: 10px;
-  /*box-shadow: 0 1px 4px rgba(0,0,0,.1);*/
   box-shadow: 0 1px 4px rgba(0,0,0,.1), 0 0 24px rgba(0,0,0,.06);
   margin: 16px auto;
   max-width: 360px;
@@ -122,7 +116,6 @@ th {
     color: #fff;
     margin: 0;
     max-width: 100vw;
-    /* min-height: 300px; */
     position: fixed;
     top: 0;
     z-index: 1;
@@ -153,7 +146,6 @@ th {
       font-size: 18px;
     }
   .card.amoritization > .menu {
-    /*border-top: 1px solid rgba(0,0,0,.1);*/
     margin-top: 8px;
   }
     .card.amoritization > .menu > ul {
@@ -215,76 +207,6 @@ th {
     .card .tab.visible {
       display: block;
     }
-  /*.card.totals > header {
-    background: #fafafa;
-    border-radius: 10px 10px 0 0;
-    padding: 16px 16px 12px;
-    font-size: 18px;
-    font-weight: 600;
-  }
-  .card.totals > .tab {
-    padding: 24px 0 16px;
-  }
-    .card.totals > .tab > li {
-      align-items: center;
-      display: flex;
-      flex: 1;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: flex-end;
-      margin: 0 16px 8px;
-    }
-      .card.totals > .tab > li.hidden {
-        display: none;
-      }
-      .card.totals > .tab > li > .label {
-        color: rgba(0,0,0,.8);
-        flex: 1;
-        /*font-size: 12px;*
-        line-height: 16px;
-        margin-right: 8px;
-      }
-      .card.totals > .tab > li > .output {
-        color: rgba(0,0,0,.3);
-        display: flex;
-        overflow: hidden;
-        position: relative;
-      }
-        .card.totals > .tab > li > .output > span:first-of-type {
-          padding-right: 4px;
-        }
-      .card.totals > .tab > li.row-primary {
-        border-bottom: 1px solid rgba(0,0,0,.06);
-        margin: 0 0 8px;
-        padding: 0 16px 8px;
-      }
-        .card.totals > .tab > li.row-primary > .label {
-          font-weight: 700;
-        }
-        .card.totals > .tab > li.row-primary > .output > span:first-of-type {
-          color: rgba(0,0,0,.8);
-          font-weight: 700;
-        }
-      .card.totals > .tab > li.row-secondary {
-
-      }
-        .card.totals > .tab > li.row-secondary > .label {
-          color: rgba(0,0,0,.8);
-        }
-        .card.totals > .tab > li.row-secondary > .output > span:first-of-type {
-          color: rgba(0,0,0,.8);
-        }
-      .card.totals > .tab > li.row-tertiary {
-
-      }
-        .card.totals > .tab > li.row-tertiary > .label {
-          color: rgba(0,0,0,.3);
-          padding-left: 16px;
-        }
-        .card.totals > .tab > li.row-tertiary > .output > span:first-of-type {
-          color: rgba(0,0,0,.3);
-        }*/
-      /**/
   .card > .head {
     align-items: baseline;
     border-radius: 10px 10px 0 0;
@@ -321,13 +243,6 @@ th {
       background: #fafafa;
       margin-bottom: 0;
     }
-      /*.card.totals > header {
-        background: #fafafa;
-        border-radius: 10px 10px 0 0;
-        padding: 16px 16px 12px;
-        font-size: 18px;
-        font-weight: 600;
-      }*/
       .card.totals > .tab {
         padding: 24px 0 16px;
       }
@@ -338,7 +253,6 @@ th {
           background: linear-gradient(to bottom, rgba(250,250,250,1) 0%,rgba(250,250,250,0) 100%) 0 -32px no-repeat;
         }
         .card.totals > .tab details[open] > summary:hover {
-          /*background: linear-gradient(to bottom, rgba(250,250,250,1) 0%,rgba(250,250,250,0) 100%);*/
           background-position: 0 0;
         }
         .card.totals > .tab .row {
@@ -372,7 +286,6 @@ th {
             }
           .card.totals > .tab .row.header {
             border-bottom: 1px solid rgba(0,0,0,.1);
-            /*margin: 0 0 8px;*/
             padding: 0 16px 8px;
           }
               .card.totals > .tab .row.header .label {
@@ -425,11 +338,9 @@ th {
       transition: background .1s, color .1s;
     }
       .card .card-tabs > li:hover {
-        /*background: rgba(0,0,0,.03);*/
         color: rgba(0,0,0,.5);
       }
       .card .card-tabs > li.selected {
-        /*background: transparent;*/
         border-bottom: 4px solid #F00563;
         color: #F00563;
         cursor: default;
@@ -443,14 +354,10 @@ th {
 
 .chart-wrapper {
   border-radius: 10px;
-  /*display: flex;*/
   height: 250px;
-  /*position: relative;*/
   width: 360px;
 }
 .chart {
-  /*flex: 1;*/
-  /*margin: 10px;*/
   padding: 10px;
   position: relative;
 }
@@ -470,18 +377,7 @@ th {
     opacity: 1;
     top: 82px;
   }
-  /*.floater > div {
-    background: #049DCA;
-    border-radius: 10px;
-    bottom: 0;
-    box-shadow: 0 1px 4px rgba(0,0,0,.1);
-    color: #fff;
-    margin: 8px auto;
-    max-width: 100vw;
-    width: 360px;
-  }*/
       .floater {
-        /*background: #ffffff;*/
           background: #049DCA;
           background: -moz-linear-gradient(top, #0389bf 0%, #04b0d4 100%); /* FF3.6-15 */
           background: -webkit-linear-gradient(top, #0389bf 0%,#04b0d4 100%); /* Chrome10-25,Safari5.1-6 */
@@ -493,7 +389,6 @@ th {
         background: transparent;
         border-radius: 10px;
         bottom: 0;
-        /*color: rgba(0,0,0,.8);*/
         color: #fff;
         margin: 0 auto;
         max-width: 100vw;
@@ -505,7 +400,6 @@ th {
     padding: 12px 16px;
   }
   .floater > div > ul {
-    /*border-bottom: 1px solid rgba(0,0,0,.1);*/
     display: flex;
     flex-direction: row;
   }
@@ -518,7 +412,6 @@ th {
     font-weight: 700;
   }
   .floater .per {
-    /*color: rgba(255,255,255,.8);*/
     font-size: 16px;
   }
 
@@ -743,7 +636,6 @@ th {
 
 .top-bar {
   background: #fff;
-  /*box-shadow: 0 0 8px rgba(0,0,0,.06);*/
   box-shadow: 0 0 16px rgba(0,0,0,.1);
   display: flex;
   flex-direction: column;
@@ -763,7 +655,6 @@ th {
     }
   .top-bar > .locations {
     display: flex;
-    /*flex: 1;*/
     margin: 8px auto;
     max-width: 680px;
     text-align: center;
@@ -832,18 +723,6 @@ th {
       .top-bar > .locations.collapsed > li.selected > .label {
         color: #F00563;
       }
-
-
-
-
-/* vizualization */
-  /*.main > .visualization {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    margin: 0 auto;
-    max-width: 664px;
-  }*/
   .main > .checkboxes {
     display: flex;
     flex: 1;
@@ -888,10 +767,7 @@ th {
       margin: 0 16px 8px;
     }
     .prompt > .box > ul {
-      /*display: flex;*/
-      /*flex-direction: row;*/
       float: right;
-      /*justify-content: flex-end;*/
       margin: 0 12px;
     }
       .prompt > .box > ul > li {
@@ -917,7 +793,6 @@ th {
 @media only screen
 and (max-width : 359px) {
   .main > .card {
-    /*width: 100vw;*/
   }
 }
 
@@ -1002,10 +877,6 @@ and (min-width : 860px) {
     .card.edit > .head > header {
       background: transparent;
       padding-left: 32px;
-      /*border-radius: 10px 10px 0 0;
-      padding: 16px 16px 12px;
-      font-size: 18px;
-      font-weight: 600;*/
     }
     .card > .head > .action:last-of-type {
       margin-right: 0;
@@ -1017,10 +888,8 @@ and (min-width : 860px) {
   .footer > .legal {
     justify-content: center;
     margin-left: 352px;
-    /*width: 360px;*/
   }
   .menu {
-    /*margin: 130px 0 0 0;*/
   }
     .menu > ul > li,
     .menu .li {
@@ -1064,6 +933,5 @@ and (min-width : 1064px) {
   .footer > .share,
   .footer > .legal {
     margin-left: auto;
-    /*width: 360px;*/
   }
 }
