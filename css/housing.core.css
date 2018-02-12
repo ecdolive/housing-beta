@@ -27,19 +27,23 @@ details > summary {
   cursor: pointer;
   transition: all .3s;
 }
-  details > summary:hover {
-    background: #fafafa;
-  }
-  details[open] > summary {
-    background: linear-gradient(to bottom, rgba(250,250,250,1) 0%,rgba(250,250,250,0) 100%) 0 -32px no-repeat;
-  }
-  details[open] > summary:hover {
-    /*background: linear-gradient(to bottom, rgba(250,250,250,1) 0%,rgba(250,250,250,0) 100%);*/
-    background-position: 0 0;
-  }
-summary {
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details > summary {
   list-style: none; /* firefox fix */
   outline: none;
+}
+details > summary > div:before {
+  color: #F00563;
+  color: #0088cc;
+  content: '+';
+  margin: 0 4px 0 -20px;
+  text-align: center;
+  width: 16px;
+}
+details[open] > summary > div:before {
+  content: '-';
 }
 table {
   /*margin-top: 48px;*/
@@ -327,6 +331,16 @@ th {
       .card.totals > .tab {
         padding: 24px 0 16px;
       }
+        .card.totals > .tab details > summary:hover {
+          background: #fafafa;
+        }
+        .card.totals > .tab details[open] > summary {
+          background: linear-gradient(to bottom, rgba(250,250,250,1) 0%,rgba(250,250,250,0) 100%) 0 -32px no-repeat;
+        }
+        .card.totals > .tab details[open] > summary:hover {
+          /*background: linear-gradient(to bottom, rgba(250,250,250,1) 0%,rgba(250,250,250,0) 100%);*/
+          background-position: 0 0;
+        }
         .card.totals > .tab .row {
           align-items: center;
           border-bottom: 1px solid rgba(0,0,0,.04);
@@ -383,32 +397,15 @@ th {
               .card.totals > .tab .row.sub .output > span:first-of-type {
                 color: rgba(0,0,0,.3);
               }
-          .card.totals > .tab > details[open] {
+          .card.totals details[open] {
             border-bottom: 1px solid rgba(0,0,0,.04);
           }
-              .card.totals > .tab > details > summary::-webkit-details-marker {
-                /*color: rgba(0,0,0,.2);*/
-                display: none;
+            .card.totals details[open] > summary > .row {
+              border-bottom: none;
+            }
+              .card.totals details > summary.row .output > span:first-of-type {
+                color: rgba(0,0,0,.8);
               }
-                  .card.totals > .tab > details > summary > div:before {
-                    color: #F00563;
-                    color: #0088cc;
-                    content: '+';
-                    margin: 0 4px 0 -20px;
-                    text-align: center;
-                    width: 16px;
-                  }
-                  .card.totals > .tab > details[open] > summary > div:before {
-                    content: '-';
-                  }
-              .card.totals > .tab > details[open] > summary > div {
-                border-bottom: none;
-                /*margin-bottom: 1px;*/
-              }
-          .card.totals > .tab > details > summary.row .output > span:first-of-type {
-            color: rgba(0,0,0,.8);
-          }
-      /**/
   .card .card-tabs {
     background: #fafafa;
     border-bottom: 1px solid rgba(0,0,0,.1);
@@ -556,41 +553,62 @@ th {
   flex: 1;
   flex-direction: column;
 }
-    .menu > ul > li {
+    .menu > ul > li,
+    .menu .li {
       align-items: center;
       display: flex;
       flex: 1;
       flex-direction: row;
       flex-wrap: nowrap;
       justify-content: flex-end;
-      margin: 0 16px 8px;
+      margin: 0 16px 8px 32px;
     }
       .menu > ul > li.hidden {
         display: none;
       }
-      .menu > ul > li.set-top {
+      .menu .set-top {
         margin-bottom: 0;
       }
-        .menu > ul > li.set-top > .input,
-        .menu > ul > li.set-top > .input > input {
+        .menu details .set-top {
+          margin-bottom: 8px;
+        }
+          .menu details[open] .set-top,
+          .menu details[open] .set-middle {
+            margin-bottom: 0;
+          }
+        .menu .set-top > .input,
+        .menu .set-top > .input > input {
           border-bottom: 0;
           border-bottom-left-radius: 0;
           border-bottom-right-radius: 0;
         }
-      .menu > ul > li.set-middle {
+        .menu details .set-top > .input {
+          border-bottom: 1px solid rgba(0,0,0,.08);
+        }
+        .menu details .set-top > .input,
+        .menu details .set-top > .input > input {
+          border-radius: 24px;
+        }
+          .menu details[open] .set-top > .input,
+          .menu details[open] .set-top > .input > input {
+            border-bottom: 0;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+      .menu .set-middle {
         margin-bottom: 0;
       }
-        .menu > ul > li.set-middle > .input,
-        .menu > ul > li.set-middle > .input > input {
+        .menu .set-middle > .input,
+        .menu .set-middle > .input > input {
           border-bottom: 0;
           border-radius: 0;
         }
-        .menu > ul > li.set-bottom > .input,
-        .menu > ul > li.set-bottom > .input > input {
+        .menu .set-bottom > .input,
+        .menu .set-bottom > .input > input {
           border-top-left-radius: 0;
           border-top-right-radius: 0;
         }
-      .menu > ul > li > .input {
+      .menu .input {
         background: rgba(0,0,0,.02);
         border: 1px solid rgba(0,0,0,.08);
         border-radius: 24px;
@@ -601,10 +619,10 @@ th {
         position: relative;
         width: 160px;
       }
-        .menu > ul > li > .input.sheen {
+        .menu .input.sheen {
           background: transparent;
         }
-        .menu > ul > li > .input.sheen:before {
+        .menu .input.sheen:before {
           animation: sheen 3s ease 2s infinite;
           background: linear-gradient(
             -45deg,
@@ -625,10 +643,10 @@ th {
             50% { left: 0%; }
             100% { left: 0%; }
         }
-      .menu > ul > li > .input.disabled {
+      .menu .input.disabled {
         border-left: 1px solid rgba(0,0,0,0);
       }
-      .menu > ul > li > .input.date > select {
+      .menu .input.date > select {
         border: 0;
         border-radius: 0;
         color: #0088cc;
@@ -642,19 +660,19 @@ th {
         transition: color .3s, padding .3s;
         -webkit-appearance: none;
       }
-      .menu > ul > li > .input.date > select:first-child {
+      .menu .input.date > select:first-child {
         padding-right: 0;
       }
-      .menu > ul > li > .input.date > select:last-child {
+      .menu .input.date > select:last-child {
         padding-left: 0;
       }
-      .menu > ul > li > .input.date:hover > select {
+      .menu .input.date:hover > select {
         color: rgba(0,0,0,.2);
       }
-      .menu > ul > li > .input.date:hover > select:hover {
+      .menu .input.date:hover > select:hover {
         color: #0088cc;
       }
-        .menu > ul > li > .input > input {
+        .menu .input > input {
           background: transparent;
           border: 0;
           border-radius: 24px;
@@ -668,29 +686,29 @@ th {
           transition: border .3s, box-shadow .3s, padding .3s;
           width: 100%;
         }
-          .menu > ul > li > .input > input:hover,
-          .menu > ul > li > .input > input:focus {
+          .menu .input > input:hover,
+          .menu .input > input:focus {
             background: rgba(0,0,0,.03);
           }
-        .menu > ul > li > .input > input[type='checkbox'] {
+        .menu .input > input[type='checkbox'] {
           margin: 0;
           width: auto;
         }
-        .menu > ul > li > .input > input:disabled {
+        .menu .input > input:disabled {
           background: transparent;
           border: 1px solid rgba(0,0,0,0);
           color: rgba(0,0,0,.5);
           font-weight: inherit;
           -webkit-text-fill-color: rgba(0,0,0,.5);
         }
-          .menu > ul > li > .input > input:disabled:hover {
+          .menu .input > input:disabled:hover {
             border: 1px solid rgba(0,0,0,0);
           }
-        .menu > ul > li > .input > span {
+        .menu .input > span {
           position: absolute;
           right: 12px;
         }
-        .menu > ul > li > .input > .avatar {
+        .menu .input > .avatar {
           align-self: center;
           background: #fff center/cover no-repeat;
           border-radius: 20px;
@@ -701,25 +719,26 @@ th {
           transition: box-shadow .3s, filter .3s;
           width: 40px;
         }
-          .menu > ul > li > .input > .avatar[src=""] {
+          .menu .input > .avatar[src=""] {
             display: none;
           }
-          .menu > ul > li > .input > .avatar + input {
+          .menu .input > .avatar + input {
             padding-left: 48px;
           }
-          .menu > ul > li > .input > .avatar[src=""] + input {
+          .menu .input > .avatar[src=""] + input {
             padding-left: 12px;
           }
-      .menu > ul > li > .label {
+      .menu .label {
         color: rgba(0,0,0,.5);
         flex: 1;
         font-size: 12px;
         line-height: 16px;
         margin-right: 8px;
       }
-        .menu > ul > li > .label.sub {
+        .menu .label.sub {
           color: rgba(0,0,0,.3);
           font-size: 13px;
+          padding-left: 16px;
         }
 
 .top-bar {
@@ -982,7 +1001,7 @@ and (min-width : 860px) {
       }
     .card.edit > .head > header {
       background: transparent;
-      padding-left: 24px;
+      padding-left: 32px;
       /*border-radius: 10px 10px 0 0;
       padding: 16px 16px 12px;
       font-size: 18px;
@@ -1003,25 +1022,31 @@ and (min-width : 860px) {
   .menu {
     /*margin: 130px 0 0 0;*/
   }
-    .menu > ul > li {
-      margin: 0 0 8px 24px;
+    .menu > ul > li,
+    .menu .li {
+      margin: 0 0 8px 32px;
     }
-      .menu > ul > li > .input {
+      .menu .input {
+        border-radius: 18px;
         line-height: 36px;
       }
-      .menu > ul > li > .input > input {
+      .menu .input > input {
         border-radius: 18px;
         height: 14px;
         padding: 10px 12px;
         transition: border .3s, box-shadow .3s, padding .3s;
       }
-      .menu > ul > li > .input > .avatar {
+        .menu details .set-top > .input,
+        .menu details .set-top > .input > input {
+          border-radius: 18px;
+        }
+      .menu .input > .avatar {
         border-radius: 14px;
         height: 28px;
         left: 4px;
         width: 28px;
       }
-        .menu > ul > li > .input > .avatar + input {
+        .menu .input > .avatar + input {
           padding-left: 36px;
         }
 }
