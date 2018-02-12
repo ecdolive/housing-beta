@@ -38,6 +38,7 @@ details > summary {
     background-position: 0 0;
   }
 summary {
+  list-style: none; /* firefox fix */
   outline: none;
 }
 table {
