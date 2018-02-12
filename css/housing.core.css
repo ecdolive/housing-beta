@@ -167,6 +167,7 @@ th {
       text-align: center;
     }
     .card.share p {
+      line-height: normal;
       padding: 0 16px 16px;
       text-align: center;
     }
