@@ -3,7 +3,7 @@ body, input, select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  color: #424a50;
+  color: #2B2B2B;
   font-family: -apple-system, '.SFNSText-Light', '.SFNSDisplay-Regular', 'Helvetica Neue', sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -49,12 +49,12 @@ tbody > tr {
 }
 tbody > tr:nth-of-type(odd) {
   background: rgba(0,0,0,.04);
-  color: rgba(0,0,0,.8);
+  color: #2B2B2B;
 }
 tbody > tr:hover, tbody > tr:nth-of-type(odd):hover {
   background: rgba(0,0,0,.08);
   color: rgb(0,0,0);
-  background: rgba(0,0,0,.8);
+  background: #2B2B2B;
   color: rgb(255,255,255);
 }
 th, td {
@@ -270,7 +270,7 @@ th {
             display: none;
           }
           .card.totals > .tab .row .label {
-            color: rgba(0,0,0,.8);
+            color: #2B2B2B;
             flex: 1;
             line-height: 16px;
             margin-right: 8px;
@@ -282,7 +282,7 @@ th {
             position: relative;
           }
             .card.totals > .tab .row .output > span:first-of-type {
-              color: rgba(0,0,0,.8);
+              color: #2B2B2B;
               padding-right: 4px;
             }
           .card.totals > .tab .row.header {
@@ -293,7 +293,7 @@ th {
                 font-weight: 700;
               }
               .card.totals > .tab .row.header .output > span:first-of-type {
-                color: rgba(0,0,0,.8);
+                color: #2B2B2B;
                 font-weight: 700;
               }
           .card.totals > .tab .row.sub {
@@ -318,7 +318,7 @@ th {
               border-bottom: none;
             }
               .card.totals details > summary.row .output > span:first-of-type {
-                color: rgba(0,0,0,.8);
+                color: #2B2B2B;
               }
   .card .card-tabs {
     background: #fafafa;
@@ -580,6 +580,9 @@ th {
           transition: border .3s, box-shadow .3s, padding .3s;
           width: 100%;
         }
+          .menu .input > input.pawn {
+            /* color: #2B2B2B; */
+          }
           .menu .input > input:hover,
           .menu .input > input:focus {
             background: rgba(0,0,0,.03);
@@ -704,7 +707,7 @@ th {
           color: rgba(0,0,0,.5);
         }
         .top-bar > .locations > li.selected > .label {
-          color: rgba(0,0,0,.8);
+          color: #2B2B2B;
         }
   .top-bar > .locations.collapsed {
     margin: 0 auto;
