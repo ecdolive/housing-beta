@@ -1,5 +1,5 @@
 /* Default to phone layout */
-body, input, select {
+body, button, input, select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -22,6 +22,26 @@ a:hover {
   color: rgba(0,136,204,1);
   text-decoration: underline;
 }
+button {
+  background-color: #F6F6F6;
+  border: 0;
+  border-radius: 18px;
+  color: #0088CC;
+  cursor: pointer;
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  height: 36px;
+  margin: 0 auto;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-transform: uppercase;
+  transition: border .3s, box-shadow .3s, padding .3s;
+}
+  button:hover {
+    background-color: #ffffff;
+  }
 details > summary {
   cursor: pointer;
   transition: all .3s;
@@ -94,6 +114,53 @@ th {
     box-shadow: 0 3px 12px rgba(0,0,0,.15);
   }
 
+.amoritization-table {
+  align-items: center;
+  background-color: rgba(0,0,0,0);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  transition: background .3s, box-shadow .3s, color .3s;
+  visibility: hidden;
+  width: 100vw;
+  z-index: 12;
+}
+.amoritization-table.show {
+  background-color: rgba(0,0,0,.67);
+  visibility: visible;
+}
+  .amoritization-table > close {
+    height: 100vh;
+    position: fixed;
+    width: 100vw;
+  }
+  .amoritization-table > div {
+    align-items: center;
+    display: flex;
+    flex: 1;
+  }
+    .amoritization-table > div > .atable {
+      background-color: #ffffff;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      max-width: 95vw;
+      min-width: 80vw;
+      padding: 10px 0;
+      z-index: 1;
+    }
+      .amoritization-table > div > .atable > row {
+        display: flex;
+        padding: 5px 0;
+      }
+      .amoritization-table > div > .atable > row:hover {
+        background-color: #F6F6F6;
+      }
+        .amoritization-table > div > .atable > row > cell {
+          flex: 1;
+          text-align: center;
+        }
 .card {
   background: #fff;
   border-radius: 10px;
@@ -135,7 +202,7 @@ th {
       padding: 0 24px 24px;
     }
       .card.mortgage .item:last-of-type {
-        padding-bottom: 32px;
+        padding-bottom: 16px;
       }
     .card.mortgage .value {
       font-size: 32px;
@@ -550,7 +617,7 @@ th {
         margin: 0;
         outline: none;
         padding: 10px 12px;
-        text-align-last: right;
+        /* text-align-last: right; */
         transition: color .3s, padding .3s;
         -webkit-appearance: none;
       }
@@ -830,8 +897,8 @@ and (min-width : 480px) {
     .main > .card.mortgage {
         background: #049DCA;
         background: -moz-linear-gradient(top, #0389bf 0%, #04b0d4 100%); /* FF3.6-15 */
-        background: url(../img/skyline.svg) center -270%/cover no-repeat, -webkit-linear-gradient(top, #0389bf 0%,#04b0d4 100%); /* Chrome10-25,Safari5.1-6 */
-        background: url(../img/skyline.svg) center -270%/cover no-repeat, linear-gradient(to bottom, #0389bf 0%,#04b0d4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        background: url(../img/skyline.svg) center 120px/cover no-repeat, -webkit-linear-gradient(top, #0389bf 0%,#04b0d4 100%); /* Chrome10-25,Safari5.1-6 */
+        background: url(../img/skyline.svg) center 120px/cover no-repeat, linear-gradient(to bottom, #0389bf 0%,#04b0d4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0389bf', endColorstr='#04b0d4',GradientType=0 ); /* IE6-9 */
       border-radius: 10px;
       bottom: auto;

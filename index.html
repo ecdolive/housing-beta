@@ -53,6 +53,7 @@
     </script>
   </head>
   <body>
+    <div id="amoritization-table" class="amoritization-table"></div>
     <div class="top-bar">
       <h1>
         <a href="/">
@@ -94,6 +95,9 @@
             <span class="value" data-output="u96z"></span>
             <span class="per">years</span>
           </div>
+          <div class="item">
+            <button id="amoritization-button" class="noselect">Amoritization</button>
+          </div>
         </div>
       </section>
       <section class="card edit">
@@ -104,7 +108,7 @@
         <div class="menu">
           <!-- <div class="card-title">Edit Details</div> -->
           <ul>
-            <li class="hidden">
+            <li>
               <div class="label">Purchase date</div>
               <div class="input date">
                 <select id="month" data-cookie="month"></select>
