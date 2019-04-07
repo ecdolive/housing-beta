@@ -94,7 +94,7 @@ th {
     box-shadow: 0 3px 12px rgba(0,0,0,.15);
   }
 
-.amoritization-table {
+.amortization-table {
   align-items: center;
   background-color: rgba(0,0,0,0);
   display: flex;
@@ -106,21 +106,21 @@ th {
   width: 100vw;
   z-index: 12;
 }
-.amoritization-table.show {
+.amortization-table.show {
   background-color: rgba(0,0,0,.67);
   visibility: visible;
 }
-  .amoritization-table > close {
+  .amortization-table > close {
     height: 100vh;
     position: fixed;
     width: 100vw;
   }
-  .amoritization-table > div {
+  .amortization-table > div {
     align-items: center;
     display: flex;
     flex: 1;
   }
-    .amoritization-table > div > .table {
+    .amortization-table > div > .table {
       display: flex;
       flex-direction: column;
       max-height: 90vh;
@@ -130,40 +130,40 @@ th {
       position: relative;
       z-index: 1;
     }
-      .amoritization-table > div > .table > div {
+      .amortization-table > div > .table > div {
         background-color: #FCFCFC;
         flex: 1;
       }
-        .amoritization-table > div > .table > div.labels {
+        .amortization-table > div > .table > div.labels {
           background-color: #FFFFFF;
           border-radius: 10px 10px 0 0;
           z-index: 1;
         }
-        .amoritization-table > div > .table > div.rows {
+        .amortization-table > div > .table > div.rows {
           border-radius: 0 0 10px 10px;
           overflow: auto;
         }
-        .amoritization-table > div > .table > div > row {
+        .amortization-table > div > .table > div > row {
           align-items: center;
           display: flex;
           /* min-height: 20px; */
           padding: 4px 0;
           transition: background .3s, box-shadow .3s;
         }
-        .amoritization-table > div > .table > div.labels > row {
+        .amortization-table > div > .table > div.labels > row {
           box-shadow: 0 2px 8px rgba(0,0,0,.1);
           flex: 1;
           padding: 10px 0;
         }
-        .amoritization-table > div > .table > div.rows > row:hover {
+        .amortization-table > div > .table > div.rows > row:hover {
           background-color: #FFFFFF;
           box-shadow: 0 2px 16px rgba(0,0,0,.1);
         }
-          .amoritization-table > div > .table > div > row > cell {
+          .amortization-table > div > .table > div > row > cell {
             flex: 1;
             text-align: center;
           }
-          .amoritization-table > div > .table > div > row > cell > input {
+          .amortization-table > div > .table > div > row > cell > input {
             background-color: rgba(0,0,0,.02);
             border: 1px solid rgba(0,0,0,.08);
             border-radius: 18px;
@@ -176,8 +176,8 @@ th {
             transition: border .3s, box-shadow .3s, padding .3s;
             width: calc(100% - 24px);
           }
-            .amoritization-table > div > .table > div > row > cell > input:hover,
-            .amoritization-table > div > .table > div > row > cell > input:focus {
+            .amortization-table > div > .table > div > row > cell > input:hover,
+            .amortization-table > div > .table > div > row > cell > input:focus {
               background-color: rgba(0,0,0,.07);
             }
 .card {
@@ -231,7 +231,7 @@ th {
       color: rgba(255,255,255,.8);
       font-size: 18px;
     }
-    .card.mortgage .amoritization-button {
+    .card.mortgage .amortization-button {
       background-color: #F6F6F6;
       border: 0;
       border-radius: 18px;
@@ -248,16 +248,16 @@ th {
       text-transform: uppercase;
       transition: border .3s, box-shadow .3s, padding .3s;
     }
-      .card.mortgage .amoritization-button:hover {
+      .card.mortgage .amortization-button:hover {
         background-color: #ffffff;
       }
-  .card.amoritization > .menu {
+  .card.amortization > .menu {
     margin-top: 8px;
   }
-    .card.amoritization > .menu > ul {
+    .card.amortization > .menu > ul {
       padding: 16px;
     }
-      .card.amoritization > .menu > ul > li {
+      .card.amortization > .menu > ul > li {
         margin: 0;
       }
   .card.share {
@@ -956,7 +956,7 @@ and (min-width : 480px) {
 /* Medium width (tablet) */
 @media only screen
 and (min-width : 640px) {
-  .card.mortgage .amoritization-button {
+  .card.mortgage .amortization-button {
     display: block;
   }
 }
