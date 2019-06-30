@@ -29,7 +29,6 @@
       <!-- remove lib/housing.api.js -->
       <script src="lib/housing.calculate.js"></script>
       <script src="lib/housing.core.js"></script>
-      <script src="lib/housing.locations.js"></script>
       <script src="lib/housing.init.js"></script>
     <!-- remove lib/jquery.sparkline.min.js -->
     <script src="lib/housing.chart.js"></script>
@@ -60,33 +59,11 @@
           <img src="img/lockup-realistic-mortgage.svg" alt="Realistic Mortgage | Simple Monthly Payments Calculator">
         </a>
       </h1>
-      <ul id="locations" class="locations">
-        <li data-cookie="location" data-value="custom">
-          <img class="avatar" src="img/custom.jpg" alt="yellow front door of a brick house">
-          <div class="label">Custom</div>
-        </li>
-        <li data-cookie="location" data-value="atlanta">
-          <img class="avatar" src="img/atlanta.jpg" alt="atlanta skyline">
-          <div class="label">Atlanta</div>
-        </li>
-        <li data-cookie="location" data-value="chicago">
-          <img class="avatar" src="img/chicago.jpg"  alt="cloud gate sculpture in chicago">
-          <div class="label">Chicago</div>
-        </li>
-        <li data-cookie="location" data-value="san_francisco">
-          <img class="avatar" src="img/sanfrancisco.jpg" alt="san francisco golden gate bridge">
-          <div class="label">San Francisco</div>
-        </li>
-        <li data-cookie="location" data-value="seattle">
-          <img class="avatar" src="img/seattle.jpg" alt="seattle skyline and space needle">
-          <div class="label">Seattle</div>
-        </li>
-      </ul>
     </div>
     <main class="main">
       <section id="card-mortgage" class="card mortgage">
         <div class="content">
-          <div class="title">Your <span data-output="location-name"></span> mortgage</div>
+          <div class="title">Your mortgage</div>
           <div class="item">
             <span class="value" data-output="u94z" data-format="currency"></span>
             <span class="per">/month</span>
@@ -163,7 +140,6 @@
             <li>
               <div class="label">Tax rate</div>
               <div class="input">
-                <img class="avatar" src="" alt="city image" data-output="location-image">
                 <input id="tax" data-cookie="tax">
                 <span>/year</span>
               </div>
@@ -454,7 +430,7 @@
     </main>
     <section id="floater" class="floater">
         <div>
-          <div class="title">Your <span data-output="location-name"></span> mortgage</div>
+          <div class="title">Your mortgage</div>
           <ul>
             <li>
               <span class="value" data-output="u94z"></span>

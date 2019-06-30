@@ -210,7 +210,7 @@ th {
       margin: 0 auto;
       max-width: 360px;
       position: relative;
-      top: 130px;
+      top: 48px;
     }
     .card.mortgage .title {
       font-size: 18px;
@@ -482,7 +482,7 @@ th {
 }
   .floater.show {
     opacity: 1;
-    top: 82px;
+    top: 48px;
   }
       .floater {
           background: #049DCA;
@@ -543,7 +543,7 @@ th {
     }
 
 .main {
-  padding-top: 130px;
+  padding-top: 48px;
   position: relative;
   top: calc(100vh - 304px);
 }
@@ -738,76 +738,6 @@ th {
       display: block;
       height: 32px;
     }
-  .top-bar > .locations {
-    display: flex;
-    margin: 8px auto;
-    max-width: 680px;
-    text-align: center;
-    transition: margin .3s;
-    max-width: 95vw;
-    position: relative;
-  }
-    .top-bar > .locations > li {
-      align-items: center;
-      cursor: pointer;
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      min-width: 80px;
-    }
-      .top-bar > .locations > li > .avatar {
-        background: #fff center/cover no-repeat;
-        border-radius: 40px;
-        box-shadow: inset 0 0 0 2px rgba(0,0,0,1);
-        -webkit-filter: brightness(100%) contrast(90%) opacity(20%) saturate(20%);
-        filter: brightness(100%) contrast(90%) opacity(20%) saturate(20%);
-        height: 48px;
-        position: relative;
-        transition: box-shadow .3s, filter .3s, height .3s, width .3s, opacity .2s;
-        width: 48px;
-        }
-          .top-bar > .locations > li:hover > .avatar {
-            box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);
-            -webkit-filter: brightness(100%) contrast(95%) opacity(60%) saturate(60%);
-            filter: brightness(100%) contrast(95%) opacity(60%) saturate(60%);
-          }
-          .top-bar > .locations > li.selected > .avatar,
-          .top-bar > .locations > li.selected:hover > .avatar {
-            box-shadow: inset 0 0 0 0 rgb(0,0,0);
-            -webkit-filter: none;
-            filter: none;
-          }
-      .top-bar > .locations > li > .label {
-        color: rgba(0,0,0,.3);
-        font-size: 10px;
-        font-weight: 600;
-        margin-top: 8px;
-        transition: color .3s, margin .3s;
-      }
-        .top-bar > .locations > li:hover > .label {
-          color: rgba(0,0,0,.5);
-        }
-        .top-bar > .locations > li.selected > .label {
-          color: #2B2B2B;
-        }
-  .top-bar > .locations.collapsed {
-    margin: 0 auto;
-  }
-    .top-bar > .locations.collapsed > li.selected {
-      border-bottom: 4px solid #F00563;
-    }
-    .top-bar > .locations.collapsed > li > .avatar {
-      height: 0;
-      opacity: 0;
-      width: 0;
-    }
-    .top-bar > .locations.collapsed > li > .label {
-      margin: 12px 0 8px;
-      transition: color .1s, margin .3s;
-    }
-      .top-bar > .locations.collapsed > li.selected > .label {
-        color: #F00563;
-      }
   .main > .checkboxes {
     display: flex;
     flex: 1;
@@ -963,7 +893,7 @@ and (min-width : 860px) {
         margin: 0;
         overflow: auto;
         position: fixed;
-        top: 130px;
+        top: 48px;
         width: 320px;
         z-index: 3;
       }
