@@ -1090,7 +1090,7 @@ and (min-width : 860px) {
         transition: border .3s, box-shadow .3s, padding .3s;
       }
   .footer {
-    margin-bottom: 0px;
+    margin-bottom: 8px;
   }
 }
 
